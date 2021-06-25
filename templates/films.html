@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Films</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>Hello there</h2>
+
     {% for film in films %}
         {{ film.film_name}}<br>
         {{ film.film_year}}<br>
@@ -16,5 +13,4 @@
         {{ film.film_url}}<br>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}
