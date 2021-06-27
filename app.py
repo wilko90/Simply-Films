@@ -39,7 +39,7 @@ def register():
         if request.form.get("password") != request.form.get(
                 "confirm-password"):
             flash("Passwords do not match!")
-            return redirect(url_for("register"))
+            return redirect(url_for("login"))
 
         register = {
             "username": request.form.get("username").lower(),
