@@ -40,9 +40,42 @@ nav {
 .container {
     margin: 0 auto;
 }
+.home-container {
+    display:flex;
+    width: 85%;
+    height: 38rem;
+    margin-top: 2rem;
+    margin-left: 100px;
+}
 
-.film-hero {
-    background-image: url(../static/img/background-img.jpeg);
+.hero-home-img {
+    background-image: url(/static/img/background-img.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 1.5rem;
+    width: 100%;
+}
+
+.home-hero-h1{
+    letter-spacing: 1rem;
+}
+
+.main-heading{
+    color: var(--black);
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.home-paragpaph{
+    margin-bottom: 3rem;
+    text-transform: none;
+    font-size: 1.5rem;
+    font-weight: 100;
 }
 .login-section{
     margin-top: 7rem;
@@ -60,14 +93,31 @@ nav {
     border-radius: 2em;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: ' Roboto', sans-serif;
+    font-family: var(--font);
     font-weight: 300;
-    color: #FFFFFF;
+    color: var(--white);
     background-color: var(--red);
     text-align: center;
     transition: all 0.2s;
 }
 
 .login-buttons:hover {
+    background-color: #4095c6;
+}
+
+.home-button {
+    display: inline-block;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--font);
+    font-weight: 300;
+    color: var(--white);
+    background-color: var(--red);
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.home-button:hover {
     background-color: #4095c6;
 }

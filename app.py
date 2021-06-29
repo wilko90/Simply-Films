@@ -20,9 +20,14 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/films")
-def home():
+def films():
     films = mongo.db.films.find()
     return render_template("films.html", films=films)
+
+
+@app.route("/home")
+def home():
+    return render_template("home.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
