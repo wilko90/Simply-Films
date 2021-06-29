@@ -40,8 +40,9 @@ nav {
 .container {
     margin: 0 auto;
 }
+
 .home-container {
-    display:flex;
+    display: flex;
     width: 85%;
     height: 38rem;
     margin-top: 2rem;
@@ -57,11 +58,11 @@ nav {
     width: 100%;
 }
 
-.home-hero-h1{
+.home-hero-h1 {
     letter-spacing: 1rem;
 }
 
-.main-heading{
+.main-heading {
     color: var(--black);
     text-transform: uppercase;
     position: absolute;
@@ -71,21 +72,24 @@ nav {
 }
 
 
-.home-paragpaph{
+.home-paragpaph {
     margin-bottom: 3rem;
     text-transform: none;
     font-size: 1.5rem;
     font-weight: 100;
 }
-.login-section{
+
+.login-section {
     margin-top: 7rem;
 }
-.log-container{
+
+.log-container {
     display: flex;
     text-align: center;
     justify-content: center;
     height: 100vh;
 }
+
 .login-buttons {
     display: inline-block;
     padding: 0.3em 1.2em;
