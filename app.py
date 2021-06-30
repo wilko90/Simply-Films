@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/films")
 def films():
-    films = mongo.db.films.find()
+    films = list(mongo.db.films.find())
     return render_template("films.html", films=films)
 
 
@@ -105,6 +105,9 @@ def logout():
     session.pop('user')
     return redirect(url_for("login"))
 
+@app.route("/add_film")
+def add_film():
+    return render_template("add_film.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
