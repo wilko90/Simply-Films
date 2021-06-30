@@ -125,3 +125,19 @@ nav {
 .home-button:hover {
     background-color: #4095c6;
 }
+
+.card .card-content .card-title{
+    display: inline;
+}
+.raiting{
+    float: right;
+}
+.card{
+    border-radius: 2.5rem;
+}
+.card .card-image img{
+    border-radius: 2.5rem;
+}
+.card .card-image{
+    border-radius: 2.5rem;
+}
