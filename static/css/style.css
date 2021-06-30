@@ -141,3 +141,12 @@ nav {
 .card .card-image{
     border-radius: 2.5rem;
 }
+.film-genre p{
+    position: absolute;
+    background-color: var(--yellow);
+    top: 20px;
+    right: 15px;
+    border-radius: 5px;
+    padding: 0 5px;
+    opacity: 0.9;
+}
