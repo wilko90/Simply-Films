@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
+
     <div class="margin-top-large">
         <h1 class=" films-h1 center-align margin-bottom-large">Add Film</h1>
     </div>
@@ -19,17 +19,46 @@
                     <i class="fas fa-info prefix text-darken-4"></i>
                     <textarea id="film_synopsis" name="film_synopsis" minlength="5" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="task_description">Synopsis</label>
+                    <label for="film_synopsis">Synopsis</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="fas fa-theater-masks prefix text-darken-4"></i>   
+                <select id="film_genre" name="film_genre" class="validate" required>
+                        <option value="" disabled selected>Choose your Genre</option>
+                        <option value="1">Action</option>
+                        <option value="2">Adventure</option>
+                        <option value="3">Horror</option>
+                        <option value="4">Sci-Fi</option>
+                        <option value="5">Comedy</option>
+                        <option value="6">Fiction</option>
+                        <option value="7">Drama</option>
+                        <option value="8">Thriller</option>
+                        <option value="9">Animation</option>
+                        <option value="10">Romance</option>
+                        <option value="11">Crime</option>
+                        <option value="12">Mystery</option>
+                </select>
+                <label for="film_genre">Genre</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-history prefix text-darken-4"></i>
-                    <input id="icon_telephone" type="number" minlength="4" maxlength="4" class="validate" required>
+                    <input id="film_year" name="film_year" type="number" minlength="4" maxlength="4" class="validate" required>
                     <label for="icon_telephone">Year</label>
                 </div>
+                <div class="input-field col s6">
+                    <i class="fas fa-history prefix text-darken-4"></i>
+                    <input id="film_raiting" name="film_raiting" type="number" minlength="1" maxlength="2" class="validate" required>
+                    <label for="icon_telephone">Raiting 10/10</label>
+                </div>
+            </div>
+            <div class="row">
+                
             </div>
         </form>
     </div>
-</div>
+
 {% endblock %}
