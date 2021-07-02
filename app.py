@@ -136,6 +136,10 @@ def film_card(film_id):
                            selected_film_card=selected_film_card, created_by=created_by)
                            
 
+@app.route("/edit_film/<film_id>", methods=["GET", "POST"])
+def edit_film(film_id):
+    selected_film = mongo.db.tasks.find_one({"_id": ObjectId(film_id)})
+    return render_template("edit_film.html", selected_film=selected_film)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
