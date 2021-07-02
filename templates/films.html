@@ -12,11 +12,13 @@
         
         <div class="card">
             <div class="card-image z-depth-3">
+                <a href="{{ url_for('film_card', film_id=film._id) }}}">
                 {% if film.film_url %}
                 <img src="{{ film.film_url}}" class="responsive-img film-image" alt="Film Image">
                 {% else %}
                 <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image" alt="No Image Available">
                 {% endif %}
+                </a>
             </div>
             <div class="film-genre">
                 <p>
