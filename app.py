@@ -127,6 +127,16 @@ def add_film():
     return render_template("add_film.html")
 
 
+@app.route("/film_card/<film_id>")
+def film_card(film_id):
+    selected_film_card = mongo.db.films.insert_one({"_id": ObjectId(film_id)})
+    created_by = mongo.db.films.find_one(
+        {"_id": ObjectId(selected_film_card.get("created_by"))})["username"]
+    return render_template("film_card.html",
+                           selected_film_card=selected_film_card, created_by=created_by)
+                           
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
