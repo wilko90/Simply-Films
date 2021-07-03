@@ -161,3 +161,15 @@ nav {
     padding: 0 5px;
     opacity: 0.9;
 }
+
+.film-card-synopsis{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.film-card-divider{
+    height: 2px;
+    background-color: var(--red);
+    border-radius: 6px;
+    border: 1px solid var(--red)
+}
