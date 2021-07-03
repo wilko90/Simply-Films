@@ -129,17 +129,17 @@ def add_film():
 
 @app.route("/film_card/<film_id>")
 def film_card(film_id):
-    selected_film_card = mongo.db.films.insert_one({"_id": ObjectId(film_id)})
-    created_by = mongo.db.films.find_one(
-        {"_id": ObjectId(selected_film_card.get("created_by"))})["username"]
+    selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("film_card.html",
-                           selected_film_card=selected_film_card, created_by=created_by)
-                           
+                           selected_film_card=selected_film_card)
+
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
     selected_film = mongo.db.tasks.find_one({"_id": ObjectId(film_id)})
     return render_template("edit_film.html", selected_film=selected_film)
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
