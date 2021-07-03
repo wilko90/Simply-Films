@@ -164,12 +164,17 @@ nav {
 
 .film-card-synopsis{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .film-card-divider{
     height: 2px;
     background-color: var(--red);
     border-radius: 6px;
-    border: 1px solid var(--red)
+    border: 1px solid var(--red);
+    margin-bottom: 4rem;
+    
+}
+.film-card-margin{
+    margin-top: 2rem;
 }
