@@ -130,14 +130,20 @@ def add_film():
 @app.route("/film_card/<film_id>")
 def film_card(film_id):
     selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("film_card.html",
-                           selected_film_card=selected_film_card)
+                           selected_film_card=selected_film_card,
+                           selected_film=selected_film)
 
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
     selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
-    return render_template("edit_film.html", selected_film=selected_film)
+    selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    return render_template("edit_film.html",
+                           selected_film=selected_film,
+                           selected_film_card=selected_film_card)
+
 
 
 
