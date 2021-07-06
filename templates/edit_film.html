@@ -10,35 +10,37 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-film prefix text-darken-4"></i>
-                    <input id="film_name" name="film_name" type="text" class="validate" required>
-                    <label for="ifilm_name">Film Name</label>
+                    <input id="film_name" value="{{ selected_film.film_name }}" name="film_name" type="text" class="validate" required>
+                    <label for="film_name">Film Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-info prefix text-darken-4"></i>
                     <textarea id="film_synopsis" name="film_synopsis" minlength="5" maxlength="200"
-                        class="materialize-textarea validate" required></textarea>
+                        class="materialize-textarea validate" required>
+                        {{- selected_film.film_synopsis -}}
+                    </textarea>
                     <label for="film_synopsis">Synopsis</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                 <i class="fas fa-theater-masks prefix text-darken-4"></i>   
-                <select id="film_genre" name="film_genre" class="validate" required>
+                <select id="film_genre" value="{{ selected_film.film_genre }}" name="film_genre" class="validate" required>
                         <option value="" disabled selected>Choose your Genre</option>
-                        <option value="Action">Action</option>
-                        <option value="Adventure">Adventure</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Sci-Fi">Sci-Fi</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Fiction">Fiction</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Thriller">Thriller</option>
-                        <option value="Animation">Animation</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Crime">Crime</option>
-                        <option value="Mystery">Mystery</option>
+                        <option value="Action" {% if selected_film.film_genre=='Action' %} selected {% endif %}>Action</option>
+                        <option value="Adventure" {% if selected_film.film_genre=='Adventure' %} selected {% endif %}>Adventure</option>
+                        <option value="Horror" {% if selected_film.film_genre=='Horror' %} selected {% endif %}>Horror</option>
+                        <option value="Sci-Fi" {% if selected_film.film_genre=='Sci-Fi' %} selected {% endif %}>Sci-Fi</option>
+                        <option value="Comedy" {% if selected_film.film_genre=='Comedy' %} selected {% endif %}>Comedy</option>
+                        <option value="Fiction" {% if selected_film.film_genre=='Fiction' %} selected {% endif %}>Fiction</option>
+                        <option value="Drama" {% if selected_film.film_genre=='Drama' %} selected {% endif %}>Drama</option>
+                        <option value="Thriller" {% if selected_film.film_genre=='Thriller' %} selected {% endif %}>Thriller</option>
+                        <option value="Animation" {% if selected_film.film_genre=='Animation' %} selected {% endif %}>Animation</option>
+                        <option value="Romance" {% if selected_film.film_genre=='Romance' %} selected {% endif %}>Romance</option>
+                        <option value="Crime" {% if selected_film.film_genre=='Crime' %} selected {% endif %}>Crime</option>
+                        <option value="Mystery" {% if selected_film.film_genre=='Mystery' %} selected {% endif %}>Mystery</option>
                 </select>
                 <label for="film_genre">Genre</label>
                 </div>
@@ -46,20 +48,22 @@
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-history prefix text-darken-4"></i>
-                    <input id="film_year" name="film_year" type="number" minlength="4" maxlength="4" class="validate" required>
+                    <input id="film_year" value="{{ selected_film.film_year }}" name="film_year" type="number" minlength="4" maxlength="4" class="validate" required>
                     <label for="icon_telephone">Release Year</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="fas fa-history prefix text-darken-4"></i>
-                    <input id="film_raiting" name="film_raiting" type="number" minlength="1" maxlength="2" class="validate" required>
+                    <input id="film_raiting" value="{{ selected_film.film_raiting }}" name="film_raiting" type="number" minlength="1" maxlength="2" class="validate" required>
                     <label for="icon_telephone">Personal Raiting 10/10</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-friends prefix text-darken-4"></i>
-                    <textarea id="film_actors" name="film_actors" minlength="5" maxlength="200"
-                        class="materialize-textarea validate" required></textarea>
+                    <textarea id="film_actors" value="{{ selected_film.film_year }}" name="film_actors" minlength="5" maxlength="200"
+                        class="materialize-textarea validate" required>
+                        {{- selected_film.film_actors -}}
+                    </textarea>
                     <label for="film_actors">Cast</label>
                 </div>
             </div>
@@ -67,12 +71,15 @@
                 <div class="input-field col s12">
                     <i class="far fa-image prefix text-darken-4"></i>
                     <textarea id="film_url" name="film_url" minlength="5" maxlength="500"
-                        class="materialize-textarea"></textarea>
+                        class="materialize-textarea">
+                        {{- selected_film.film_url -}}
+                    </textarea>
                     <label for="film_url">Image url</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 center-align">
+                    <a href="{{ url_for('films') }}" class="btn-small light-blue lighten-1">Cancel</a>
                     <button type="submit" class="btn-large submit-buttons text-shadow">
                         Edit Film <i class="fas fa-ticket-alt right"></i>
                     </button>
