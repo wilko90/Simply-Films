@@ -2,11 +2,11 @@
 {% block content %}
 
     <div class="margin-top-large">
-        <h1 class=" films-h1 center-align margin-bottom-large">Add Film</h1>
+        <h1 class=" films-h1 center-align margin-bottom-large">Edit Film</h1>
     </div>
-
+    
     <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('add_film') }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_film', film_id=selected_film._id) }}">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-film prefix text-darken-4"></i>
@@ -74,7 +74,7 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large submit-buttons text-shadow">
-                        Add Film <i class="fas fa-ticket-alt right"></i>
+                        Edit Film <i class="fas fa-ticket-alt right"></i>
                     </button>
                 </div>
             </div>
