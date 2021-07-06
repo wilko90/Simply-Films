@@ -136,7 +136,7 @@ def film_card(film_id):
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
-    selected_film = mongo.db.tasks.find_one({"_id": ObjectId(film_id)})
+    selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("edit_film.html", selected_film=selected_film)
 
 
