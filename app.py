@@ -138,13 +138,25 @@ def film_card(film_id):
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
+    if request.method == "POST":
+        film_update = {
+            "film_name": request.form.get("film_name"),
+            "film_synopsis": request.form.get("film_synopsis"),
+            "film_genre": request.form.get("film_genre"),
+            "film_year": request.form.get("film_year"),
+            "film_raiting": request.form.get("film_raiting"),
+            "film_actors": request.form.get("film_actors"),
+            "film_url": request.form.get("film_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.films.update({"_id": ObjectId(film_id)}, film_update)
+        flash("Film Successfully Updated")
+    
     selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("edit_film.html",
                            selected_film=selected_film,
                            selected_film_card=selected_film_card)
-
-
 
 
 if __name__ == "__main__":
