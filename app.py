@@ -159,6 +159,13 @@ def edit_film(film_id):
                            selected_film_card=selected_film_card)
 
 
+@app.route("/delete_film/<film_id>")
+def delete_film(film_id):
+    mongo.db.films.remove({"_id": ObjectId(film_id)})
+    flash("Film Successfully Deleted")
+    return redirect(url_for("films"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
