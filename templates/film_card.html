@@ -19,7 +19,8 @@
         </div>
         <div class="film-card-margin">
             <p class="center-align">
-                <span class="film-created-by">Created By:</span> {{ selected_film_card.film_created_by }}
+                <span class="film-created-by">Created By:</span> 
+                {{ selected_film_card.created_by }}
             </p>
         </div>
     </div>
@@ -58,8 +59,10 @@
     </div>
     <div class="row">
         <div class="col s6 center-align">
+            {% if session.user|lower == selected_film_card.created_by|lower %}
             <a href="{{ url_for('edit_film', film_id=selected_film._id) }}" class="btn-small light-blue lighten-1">Edit</a>
             <a class="waves-effect waves-light btn">Delete</a>
+            {% endif %}
         </div>
     </div>
 </div>
