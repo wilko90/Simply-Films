@@ -4,20 +4,37 @@
     <h1 class=" films-h1 center-align margin-bottom-large">Films</h1>
 </div>
 
-
+<div class="row">
+    <form action="{{ url_for('search') }}" method="POST" class="col s10 offset-s1 m8 offset-m2">
+        <div class="input-field">
+            <input type="text" name="query" id="query" minlength="1" required>
+            <label for="query">Search </label>
+        </div>
+        <div class="col s12">
+            <button type="submit" class="btn-small">
+                <i class="fas fa-search"></i> Search
+            </button>
+            <a href="{{ url_for('films') }}" class="btn-small">
+                <i class="fas fa-redo-alt"></i> Reset
+            </a>
+        </div>
+    </form>
+</div>
 
 <div class="row">
+    {% if films|length > 0 %}
     {% for film in films %}
     <div class="col s12 m6 l3">
-        
+
         <div class="card">
             <div class="card-image z-depth-3">
                 <a href="{{ url_for('film_card', film_id=film._id) }}">
-                {% if film.film_url %}
-                <img src="{{ film.film_url}}" class="responsive-img film-image" alt="Film Image">
-                {% else %}
-                <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image" alt="No Image Available">
-                {% endif %}
+                    {% if film.film_url %}
+                    <img src="{{ film.film_url}}" class="responsive-img film-image" alt="Film Image">
+                    {% else %}
+                    <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image"
+                        alt="No Image Available">
+                    {% endif %}
                 </a>
             </div>
             <div class="film-genre">
@@ -39,9 +56,14 @@
                 <p>{{ film.film_synopsis }}</p>
             </div>
         </div>
-        
+
     </div>
     {% endfor %}
+    {% else %}
+    <div class="center-align no-results">
+        <h3>No Results Found</h3>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}
