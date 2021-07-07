@@ -10,8 +10,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-film prefix text-darken-4"></i>
-                    <input id="film_name" name="film_name" type="text" class="validate" required>
-                    <label for="ifilm_name">Film Name</label>
+                    <input id="film_name" name="film_name" type="text" minlength="1" maxlength="20" class="validate" required>
+                    <label for="film_name">Film Name <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="1-20 characters"></i><i class="fas fa-asterisk asterisk"></i></label>
                 </div>
             </div>
             <div class="row">
@@ -19,7 +19,7 @@
                     <i class="fas fa-info prefix text-darken-4"></i>
                     <textarea id="film_synopsis" name="film_synopsis" minlength="5" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="film_synopsis">Synopsis</label>
+                        <label for="film_synopsis">Film Synopsis <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="Write a summary of the plot and story of your screenplay"></i><i class="fas fa-asterisk asterisk"></i></label>
                 </div>
             </div>
             <div class="row">
@@ -40,19 +40,19 @@
                         <option value="Crime">Crime</option>
                         <option value="Mystery">Mystery</option>
                 </select>
-                <label for="film_genre">Genre</label>
+                <label for="film_genre">Genre <i class="fas fa-asterisk asterisk"></i></label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-history prefix text-darken-4"></i>
                     <input id="film_year" name="film_year" type="number" minlength="4" maxlength="4" class="validate" required>
-                    <label for="icon_telephone">Release Year</label>
+                    <label for="film_year">Release Year <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="E.g. 2021"></i><i class="fas fa-asterisk asterisk"></i></label>
                 </div>
                 <div class="input-field col s6">
-                    <i class="fas fa-history prefix text-darken-4"></i>
+                    <i class="fas fa-star prefix text-darken-4"></i>
                     <input id="film_raiting" name="film_raiting" type="number" minlength="1" maxlength="2" class="validate" required>
-                    <label for="icon_telephone">Personal Raiting 10/10</label>
+                    <label for="film_raiting">Personal Raiting <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="1 to 10"></i><i class="fas fa-asterisk asterisk"></i></label>
                 </div>
             </div>
             <div class="row">
@@ -60,7 +60,7 @@
                     <i class="fas fa-user-friends prefix text-darken-4"></i>
                     <textarea id="film_actors" name="film_actors" minlength="5" maxlength="200"
                         class="materialize-textarea validate" required></textarea>
-                    <label for="film_actors">Cast</label>
+                        <label for="film_actors">Cast<i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="Top three lead roles seprated with a comma ','"></i><i class="fas fa-asterisk asterisk"></i></label>
                 </div>
             </div>
             <div class="row">
@@ -68,7 +68,9 @@
                     <i class="far fa-image prefix text-darken-4"></i>
                     <textarea id="film_url" name="film_url" minlength="5" maxlength="500"
                         class="materialize-textarea"></textarea>
-                    <label for="film_url">Image url</label>
+                    <label for="film_url">Image url optional
+                        <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="You can upload your image to a free image hosting and sharing service"></i>
+                    </label>
                 </div>
             </div>
             <div class="row">
