@@ -4,6 +4,7 @@
     });
     $('select').formSelect();
     $('.tooltipped').tooltip();
+    $('.modal').modal();
   });
 
   validateMaterializeSelect();
@@ -46,3 +47,7 @@
       }
     });
   }
+  function back() {
+    window.history.back();
+  }
+  
