@@ -1,6 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="margin-top-large">
+    <h1 class=" films-h1 center-align margin-bottom-large">{{ username }}</h1>
 
+</div>
+<section>
+    <h3 class="center-align margin-bottom-large">My Films</h3>
+    <hr>
+    
+    <a href="{{ url_for('add_film') }}" class="btn-small"><i class="fas fa-plus"></i> Add film</a>
 
+    <div class="row">
+        {% for my_film in my_films %}
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-image z-depth-3">
+                    <a href="{{ url_for('film_card', film_id=my_films._id) }}">
+                        {% if my_films.film_url %}
+                        <img src="{{ my_films.film_url}}" class="responsive-img film-image" alt="Film Image">
+                        {% else %}
+                        <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image"
+                            alt="No Image Available">
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="film-genre">
+                    <p>
+                        {{ my_films.film_genre }}
+                    </p>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span class="film-title">
+                            {{ my_films.film_name }}
+                        </span>
+                        <span class="raiting">
+                            <i class="material-icons">star</i> {{ my_films.film_raiting}} /10
+                        </span>
+                    </div>
+                    <div class="row"></div>
+                    <span class="synopsis-title">Synopsis</span>
+                    <p>{{ my_films.film_synopsis }}</p>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
 {% endblock %}
