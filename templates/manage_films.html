@@ -13,6 +13,11 @@
     <div class="row">
         {% for film in my_films %}
         {% include "placeholders/film_placeholder.html" %}
+        {% else %}
+        <h5>
+          You haven't added any films yet. Click here to get started!
+          <a href="{{ url_for('add_film') }}" class="btn-small"><i class="fas fa-plus"></i> Add film</a>
+        </h5>
         {% endfor %}
     </div>
 </section>
