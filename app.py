@@ -48,7 +48,8 @@ def search():
 
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    trending_films = ([films for films in mongo.db.films.aggregate([{"$sample": {"size": 4}}])])
+    return render_template('home.html', trending_films=trending_films)
 
 
 @app.route("/register", methods=["GET", "POST"])
