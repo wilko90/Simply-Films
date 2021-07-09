@@ -27,6 +27,18 @@ def films():
     return render_template("films.html", films=films)
 
 
+@app.route('/manage_films/<username>', methods=['GET', 'POST'])
+def manage_films(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    my_films = list(mongo.db.films.find({
+                          "created_by": username}).sort("film_name", 1))
+    if session['user']:
+        return render_template(
+            "manage_films.html", username=username,
+            my_films=my_films)
+                            
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
