@@ -27,7 +27,7 @@
                 <li><a href="{{ url_for('films') }}">Films</a></li>
                 {% if session.user %}
                 <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
-                <li><a href="#">Manage Films</a></li>
+                <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
                 <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
@@ -42,7 +42,7 @@
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('films') }}">Films</a></li>
         <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
-        <li><a href="#">Manage Films</a></li>
+        <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
         <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
