@@ -1,0 +1,34 @@
+<div class="col s12 m6 l3">
+
+    <div class="card">
+        <div class="card-image z-depth-3">
+            <a href="{{ url_for('film_card', film_id=film._id) }}">
+                {% if film.film_url %}
+                <img src="{{ film.film_url}}" class="responsive-img film-image" alt="Film Image">
+                {% else %}
+                <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image"
+                    alt="No Image Available">
+                {% endif %}
+            </a>
+        </div>
+        <div class="film-genre">
+            <p>
+                {{ film.film_genre }}
+            </p>
+        </div>
+        <div class="card-content">
+            <div class="card-title">
+                <span class="film-title">
+                    {{ film.film_name }}
+                </span>
+                <span class="raiting">
+                    <i class="material-icons">star</i> {{ film.film_raiting}} /10
+                </span>
+            </div>
+            <div class="row"></div>
+            <span class="synopsis-title">Synopsis</span>
+            <p>{{ film.film_synopsis }}</p>
+        </div>
+    </div>
+
+</div>
