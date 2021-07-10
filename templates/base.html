@@ -16,69 +16,86 @@
     {% endblock %}
     <title>Simply Films</title>
 </head>
+
 <body>
-<header>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('films') }}">Films</a></li>
-                {% if session.user %}
-                <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
-                <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
-                <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
-                {% endif %}
-            </ul>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('films') }}">Films</a></li>
+                    {% if session.user %}
+                    <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
+                    <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
+                    <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('films') }}">Films</a></li>
+            <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
+            <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
+            <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        </ul>
+    </header>
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="center-align">{{ message }}</h4>
         </div>
-    </nav>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </section>
+    <main>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('films') }}">Films</a></li>
-        <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
-        <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
-        <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-        <li><a href="{{ url_for('register') }}">Register</a></li>
-    </ul>
-</header>
-<section>
-    <!-- flash messages -->
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div class="row flashes">
-        <h4 class="center-align">{{ message }}</h4>
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-</section>
-<main class="container">
+        {% block content %}
+        {% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
-</main>
-
-<footer>
-
-</footer>
+    </main>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    <footer class="page-footer">
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2021 Simply Films
+                <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
+                        class="fab fa-youtube"></i></a>
+                <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
+                        class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-{% block scripts %}
-{% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}
+    {% endblock %}
 </body>
 
 </html>
