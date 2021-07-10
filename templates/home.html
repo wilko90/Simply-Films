@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="home-container">
-    <div class="hero-home-img">
+<div class="container">
+    <div class="row">
         <div class="main-heading center-align">
             <h1 class="uppercase home-hero-h1">Simply Films</h1>
             <p class="home-paragpaph">
@@ -11,17 +10,14 @@
             <a class="waves-effect waves-light home-button btn-large">Browse Our Films</a>
         </div>
     </div>
-</div>
-
-<div class="container-subheading">
-    <h2 class="home-sub-heading center-align">Trending Films </h2>
+    <div class="row trending-films">
+        <h4 class="home-sub-heading center-align">Trending Films </h4>
+    </div>
     <div class="divider"></div>
-</div>
-<div class="container-films">
-    <div class="row">
-    {% for film in trending_films %} 
-        {% include "placeholders/film_placeholder.html" %} 
-    {% endfor %}
+    <div class="row margin-top-large">
+        {% for film in trending_films %}
+        {% include "placeholders/film_placeholder.html" %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
