@@ -6,8 +6,7 @@
                 {% if film.film_url %}
                 <img src="{{ film.film_url}}" class="responsive-img film-image" alt="Film Image">
                 {% else %}
-                <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image"
-                    alt="No Image Available">
+                <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image" alt="No Image Available">
                 {% endif %}
             </a>
         </div>
@@ -21,13 +20,8 @@
                 <span class="film-title">
                     {{ film.film_name }}
                 </span>
-                <span class="raiting">
-                    <i class="material-icons">star</i> {{ film.film_raiting}} /10
-                </span>
             </div>
-            <div class="row"></div>
-            <span class="synopsis-title">Synopsis</span>
-            <p>{{ film.film_synopsis }}</p>
+            
         </div>
     </div>
 
