@@ -13,6 +13,15 @@
 
 }
 
+.home-bg{
+    background-image: radial-gradient(rgba(230, 238, 238, 0.603),
+    rgba(150, 134, 132, 0.02)), url(/static/img/background-img3.jpeg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -34,12 +43,11 @@ body {
 nav {
     top: 0;
     z-index: 100;
+    position: fixed;
+    background-color:rgba(23, 24, 24, 0.747);
 }
 
-nav .nav-wrapper{
-    background-color: var(--slate);
-    position: sticky;
-}
+
 
 .container {
     margin: 0 auto;
@@ -186,6 +194,7 @@ nav .nav-wrapper{
 
 .page-footer{
     padding-top: 0;
+    background-color:rgba(23, 24, 24, 0.747);
 }
 
 .divider{
