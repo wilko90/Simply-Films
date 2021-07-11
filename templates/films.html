@@ -1,40 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="margin-top-large">
-    <h1 class=" films-h1 center-align margin-bottom-large">Films</h1>
-</div>
+<div class="home-bg">
+    <div class="container margin-top-large">
 
-<div class="row">
-    <form action="{{ url_for('search') }}" method="POST" class="col s10 offset-s1 m8 offset-m2">
-        <div class="input-field">
-            <input type="text" name="query" id="query" minlength="1" required>
-            <label for="query">Search </label>
+        <h1 class=" films-h1 center-align margin-bottom-large">Films</h1>
+
+
+
+        <div class="search-box">
+            <form action="{{ url_for('search') }}" method="POST" class="search">
+                <input class="search-input" type="text" name="query" id="query" minlength="1" required
+                    placeholder="Search Film Name or Genre...">
+                <button class="search-bar"><i class="fa fa-search"></i></button>
+            </form>
         </div>
-        <div class="col s12">
-            <button type="submit" class="btn-small">
-                <i class="fas fa-search"></i> Search
-            </button>
+
+        <div class="row">
+            {% if films|length > 0 %}
+
+
+            {% for film in films %}
+            {% include "placeholders/film_placeholder.html" %}
+            {% endfor %}
+
+        </div>
+        {% else %}
+        <div class="center-align no-results">
+            <h3>No Results Found</h3>
             <a href="{{ url_for('films') }}" class="btn-small">
-                <i class="fas fa-redo-alt"></i> Reset
+                <i class="fas fa-redo-alt"></i> back to all films
             </a>
         </div>
-    </form>
-</div>
-
-<div class="row">
-    {% if films|length > 0 %}
-
-
-    {% for film in films %}
-    {% include "placeholders/film_placeholder.html" %}
-    {% endfor %}
+        {% endif %}
+    </div>
 
 </div>
-{% else %}
-<div class="center-align no-results">
-    <h3>No Results Found</h3>
-</div>
-{% endif %}
-</div>
-
 {% endblock %}
