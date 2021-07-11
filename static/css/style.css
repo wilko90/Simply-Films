@@ -47,6 +47,9 @@ nav {
     background-color:rgba(23, 24, 24, 0.747);
 }
 
+.nav-colour{
+    color:var(--white);
+}
 
 
 .container {
@@ -194,15 +197,11 @@ nav {
 
 .page-footer{
     padding-top: 0;
-    background-color:rgba(23, 24, 24, 0.747);
+    background-color: var(--slate);
 }
 
 .divider{
     background-color: var(--black);
-}
-
-.page-footer{
-    background-color: var(--slate);
 }
 
 .margin-top-large{
@@ -215,4 +214,10 @@ nav {
 
 .margin-top-small{
     margin-top: 20px;
+}
+
+.social{
+    font-size: 20px;
+    padding-right: 10px;
+    color: var(--white);
 }
