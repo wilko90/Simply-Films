@@ -21,33 +21,33 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#!" class="brand-logo"class="nav-colour">Logo</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('films') }}">Films</a></li>
+                    <li><a href="{{ url_for('home') }}"class="nav-colour">Home</a></li>
+                    <li><a href="{{ url_for('films') }}"class="nav-colour">Films</a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
-                    <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
-                    <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a href="{{ url_for('add_film') }}"class="nav-colour">Add Film</a></li>
+                    <li><a href="{{ url_for('manage_films', username=session['user']) }}"class="nav-colour">Manage Films</a></li>
+                    <li><a href="{{ url_for('account', username=session['user']) }}"class="nav-colour">My Account</a></li>
+                    <li><a href="{{ url_for('logout') }}"class="nav-colour">Log Out</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('login') }}"class="nav-colour">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}"class="nav-colour">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('films') }}">Films</a></li>
-            <li><a href="{{ url_for('add_film') }}">Add Film</a></li>
-            <li><a href="{{ url_for('manage_films', username=session['user']) }}">Manage Films</a></li>
-            <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('home') }}"class="nav-colour">Home</a></li>
+            <li><a href="{{ url_for('films') }}"class="nav-colour">Films</a></li>
+            <li><a href="{{ url_for('add_film') }}"class="nav-colour">Add Film</a></li>
+            <li><a href="{{ url_for('manage_films', username=session['user']) }}"class="nav-colour">Manage Films</a></li>
+            <li><a href="{{ url_for('account', username=session['user']) }}"class="nav-colour">My Account</a></li>
+            <li><a href="{{ url_for('login') }}"class="nav-colour">Log In</a></li>
+            <li><a href="{{ url_for('logout') }}"class="nav-colour">Log Out</a></li>
+            <li><a href="{{ url_for('register') }}"class="nav-colour">Register</a></li>
         </ul>
     </header>
     <section>
@@ -73,16 +73,16 @@
     <footer class="page-footer">
 
         <div class="footer-copyright">
-            <div class="container">
+            <div class="container social-icons">
                 © 2021 Simply Films
                 <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
-                        class="fab fa-facebook"></i></a>
+                        class="social fab fa-facebook"></i></a>
                 <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
-                        class="fab fa-instagram"></i></a>
+                        class="social fab fa-instagram"></i></a>
                 <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
-                        class="fab fa-youtube"></i></a>
+                        class="social fab fa-youtube"></i></a>
                 <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
-                        class="fab fa-github"></i></a>
+                        class="social fab fa-github"></i></a>
             </div>
         </div>
     </footer>
