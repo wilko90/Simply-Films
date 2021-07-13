@@ -22,6 +22,15 @@
     background-attachment: fixed;
 }
 
+.bg-2 {
+    background-image: radial-gradient(rgba(230, 238, 238, 0.603),
+            rgba(150, 134, 132, 0.02)), url(/static/img/bg-2.jpeg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -121,7 +130,8 @@ nav {
 }
 
 .login-buttons:hover {
-    background-color: var(--black);
+    background-color: var(--white);
+    color: var(--slate);
 }
 
 .submit-buttons {
@@ -136,7 +146,8 @@ nav {
     text-align: center;
     transition: all 0.2s;
 }
-.submit-buttons:hover{
+
+.submit-buttons:hover {
     background-color: var(--white);
     color: var(--slate);
 }
@@ -219,21 +230,24 @@ nav {
     background-color: var(--shadow);
     color: var(--white);
 }
-.dropdown-content li>a, .dropdown-content li>span {
-    color:  var(--white);
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: var(--white);
     font-size: 14px;
     background-color: var(--slate);
 }
 
-.fa-asterisk:before{
+.fa-asterisk:before {
     color: var(--red);
     font-size: 12px;
 }
-.select-wrapper input.select-dropdown{
+
+.select-wrapper input.select-dropdown {
     color: var(--white);
 }
 
-::placeholder{
+::placeholder {
     color: var(--white);
 }
 
@@ -261,7 +275,8 @@ nav {
 .margin-top-small {
     margin-top: 20px;
 }
-.uppercase{
+
+.uppercase {
     text-transform: uppercase;
 }
 
@@ -313,18 +328,41 @@ nav {
     height: 2.5rem;
     padding-right: 20px;
 }
-.btn-floating i{
+
+.btn-floating i {
     background-color: var(--slate);
     color: var(--white) !important;
 }
-.btn-floating i:hover{
+
+.btn-floating i:hover {
     background-color: var(--white);
     color: var(--slate) !important;
 }
-.username-container{
+
+.username-container {
     background-color: var(--shadow);
     color: var(--white);
     box-shadow: var(--shadow);
     width: 65%;
     margin: auto;
+}
+
+.input-field.col .prefix~label,
+.input-field.col .prefix~.validate~label {
+    color: var(--slate);
+}
+
+.input-field .prefix~input,
+.input-field .prefix~textarea,
+.input-field .prefix~label,
+.input-field .prefix~.validate~label,
+.input-field .prefix~.helper-text,
+.input-field .prefix~.autocomplete-content {
+    color: var(--slate);
+}
+.account-ancor{
+    color: var(--white);
+}
+.account-ancor:hover{
+    color: var(--slate);
 }
