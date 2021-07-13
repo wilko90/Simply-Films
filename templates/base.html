@@ -29,7 +29,6 @@
                     {% if session.user %}
                     <li><a href="{{ url_for('add_film') }}"class="nav-colour">Add Film</a></li>
                     <li><a href="{{ url_for('manage_films', username=session['user']) }}"class="nav-colour">Manage Films</a></li>
-                    <li><a href="{{ url_for('account', username=session['user']) }}"class="nav-colour">My Account</a></li>
                     <li><a href="{{ url_for('logout') }}"class="nav-colour">Log Out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('login') }}"class="nav-colour">Log In</a></li>
@@ -44,7 +43,6 @@
             <li><a href="{{ url_for('films') }}"class="nav-colour">Films</a></li>
             <li><a href="{{ url_for('add_film') }}"class="nav-colour">Add Film</a></li>
             <li><a href="{{ url_for('manage_films', username=session['user']) }}"class="nav-colour">Manage Films</a></li>
-            <li><a href="{{ url_for('account', username=session['user']) }}"class="nav-colour">My Account</a></li>
             <li><a href="{{ url_for('login') }}"class="nav-colour">Log In</a></li>
             <li><a href="{{ url_for('logout') }}"class="nav-colour">Log Out</a></li>
             <li><a href="{{ url_for('register') }}"class="nav-colour">Register</a></li>

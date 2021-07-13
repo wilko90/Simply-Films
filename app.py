@@ -106,18 +106,6 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/account/<username>", methods=["GET", "POST"])
-def account(username):
-
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("account.html", username=username)
-
-    return redirect(url_for("login"))
-
-
 @app.route('/logout')
 def logout():
     """
