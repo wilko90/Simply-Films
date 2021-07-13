@@ -1,25 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="margin-top-large">
-    <h1 class=" films-h1 center-align margin-bottom-large">{{ username }}</h1>
-
-</div>
-<section>
-    <h3 class="center-align margin-bottom-large">My Films</h3>
-    <hr>
-
-    <a href="{{ url_for('add_film') }}" class="btn-small"><i class="fas fa-plus"></i> Add film</a>
-
-    <div class="row">
-        {% for film in my_films %}
-        {% include "placeholders/film_placeholder.html" %}
-        {% else %}
-        <h5>
-          You haven't added any films yet. Click here to get started!
-          <a href="{{ url_for('add_film') }}" class="btn-small"><i class="fas fa-plus"></i> Add film</a>
-        </h5>
-        {% endfor %}
+<div class="home-bg">
+    <div class="container margin-top-large">
+        <div class="username-container">
+        <h1 class=" films-h1 center-align margin-bottom-large">{{ username }}</h1>
     </div>
-</section>
-
+    
+    <section>
+        <div class="row">
+            <h3 class="center-align margin-bottom-large uppercase">My films
+                <a href="{{ url_for('add_film') }}"class="btn-floating btn-medium"><i class="material-icons">add</i></a></h3>
+            
+        </div>
+        <div class="row">
+            {% for film in my_films %}
+            {% include "placeholders/film_placeholder.html" %}
+            {% else %}
+            <h5 class="center-align">
+                You haven't added any films yet. Click below to get started!
+            </h5>
+            <div class="row center-align margin-top-large">
+            <a href="{{ url_for('films') }}" class="waves-effect waves-light home-button btn-large"><i class="fas fa-plus"></i> Add film</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    </div>
+</div>
 {% endblock %}
