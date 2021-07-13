@@ -9,7 +9,7 @@
     --violet: #2A1E5C;
     --yellow: #FFED65;
     --font: "Roboto", sans-serif;
-
+    --shadow: rgba(23, 24, 24, 0.747);
 
 }
 
@@ -44,7 +44,7 @@ nav {
     top: 0;
     z-index: 100;
     position: fixed;
-    background-color:rgba(23, 24, 24, 0.747);
+    background-color: var(--shadow);
 }
 
 .nav-colour{
@@ -156,6 +156,11 @@ nav {
 .card{
     border-radius: 2.5rem;
     background-color: var(--slate);
+    box-shadow: var(--shadow);
+
+}
+.card:hover{
+    box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.938), 0 3px 1px -2px rgb(247, 247, 247), 0 1px 5px 0 rgb(255, 255, 255);
 }
 .card .card-image img{
     border-radius: 2.5rem;
@@ -163,6 +168,10 @@ nav {
 .card .card-image{
     border-radius: 2.5rem;
 }
+.card .card-image{
+    box-shadow: var(--shadow);
+}
+
 .film-genre p{
     position: absolute;
     background-color: var(--yellow);
@@ -198,7 +207,9 @@ nav {
 .film-card-margin{
     margin-top: 2rem;
 }
-
+.add-film-card{
+    background-color: var(--shadow);
+}
 .page-footer{
     padding-top: 0;
     background-color: var(--slate);
@@ -233,7 +244,7 @@ nav {
 .search-box{
     border: 2px solid var(--black);
     border-radius: 10rem;
-    background-color: rgba(23, 24, 24, 0.747);
+    background-color: var(--shadow);
     width: 90%;
     margin: 36px auto;
 }
@@ -263,8 +274,4 @@ nav {
     width: 2.5rem;
     height: 2.5rem;
     padding-right: 20px;
-}
-
-.search-button:focus{
-    outline: none; 
 }
