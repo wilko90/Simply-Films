@@ -50,7 +50,7 @@
             <li><a href="{{ url_for('register') }}" class="nav-colour">Register</a></li>
         </ul>
     </header>
-
+<main>
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -63,8 +63,7 @@
         {% endif %}
         {% endwith %}
     </section>
-    
-
+</main>
     {% block content %}
     {% endblock %}
 
