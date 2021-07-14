@@ -8,6 +8,7 @@
     --slate: #232b2b;
     --violet: #2A1E5C;
     --yellow: #FFED65;
+    --gold: #ffd700;
     --font: "Roboto", sans-serif;
     --shadow: rgba(23, 24, 24, 0.747);
 
@@ -229,6 +230,7 @@ nav {
 .add-film-card {
     background-color: var(--shadow);
     color: var(--white);
+
 }
 
 .dropdown-content li>a,
@@ -275,6 +277,16 @@ nav {
 .margin-top-small {
     margin-top: 20px;
 }
+.margin-bottom-large{
+    margin-bottom: 40px;
+}
+.margin-bottom-medium{
+    margin-bottom: 30px;
+}
+.margin-bottom-small{
+    margin-bottom: 20px;
+}
+
 
 .uppercase {
     text-transform: uppercase;
@@ -365,4 +377,45 @@ nav {
 }
 .account-ancor:hover{
     color: var(--slate);
+}
+.film-card-buttons {
+    display: inline-block;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--font);
+    font-weight: 300;
+    color: var(--white);
+    background-color: var(--slate);
+    text-align: center;
+    transition: all 0.2s;
+}
+.film-card-info{
+    background-color: var(--shadow);
+    color: var(--white);
+    padding: 30px !important;
+}
+
+.film-card-buttons:hover {
+    background-color: var(--white);
+    color: var(--slate);
+}
+.modal{
+    background-color: var(--shadow);
+    color: var(--white);
+}
+.modal .modal-footer{
+    background-color: var(--shadow);
+}
+.prefix{
+    color: var(--gold);
+}
+.film-card-responsive{
+    height: 640px;
+    width: 460px !important;
+    max-width: 100%;
+}
+.film-placeholder-responsive{
+    width: 460px !important;
+    max-width: 100%;
 }
