@@ -4,9 +4,9 @@
         <div class="card-image">
             <a href="{{ url_for('film_card', film_id=film._id) }}">
                 {% if film.film_url %}
-                <img src="{{ film.film_url}}" class="responsive-img film-image" alt="Film Image">
+                <img src="{{ film.film_url}}" class="film-placeholder-responsive" alt="Film Image">
                 {% else %}
-                <img src="/static/img/film-placeholder.jpeg" class="responsive-img film-image" alt="No Image Available">
+                <img src="/static/img/film-placeholder.jpeg" class="film-placeholder-responsive" alt="No Image Available">
                 {% endif %}
             </a>
         </div>
