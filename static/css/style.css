@@ -32,13 +32,17 @@
     background-attachment: fixed;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
 }
 
 html {
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
@@ -109,18 +113,21 @@ nav {
 .login-section {
     margin-top: 7rem;
 }
-.log-card{
+
+.log-card {
     background-color: var(--shadow);
     color: var(--white);
     padding: 20px;
 }
-.reg-card{
+
+.reg-card {
     background-color: var(--shadow);
     color: var(--white);
     width: 80%;
     margin: auto;
     padding: 20px;
 }
+
 .log-container {
     display: flex;
     text-align: center;
@@ -444,11 +451,15 @@ nav {
     height: auto;
     width: 460px !important;
     max-width: 100%;
+
+}
+.card .card-image{
+    height: 39vh;
 }
 
 .film-placeholder-responsive {
-    width: 460px !important;
-    max-width: 100%;
+    width: 100% !important;
+    object-fit: cover;
 }
 
 input:not([type]),
