@@ -6,7 +6,7 @@
 
 
 <div class="card add-film-card row">
-    <form class="col s12 margin-top-large method="POST" action="{{ url_for('add_film') }}">
+    <form class="col s12 margin-top-large" method="POST" action="{{ url_for('add_film') }}">
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-film prefix text-darken-4"></i>
@@ -69,7 +69,7 @@
                 <i class="fas fa-user-friends prefix"></i>
                 <textarea id="film_actors" name="film_actors" minlength="5" maxlength="200"
                     class="materialize-textarea validate" placeholder="Lead Actors" required></textarea>
-                <label for="film_actors">Cast<i class="fas fa-question-circle tooltipped" data-position="top"
+                <label for="film_actors">Cast <i class="fas fa-question-circle tooltipped" data-position="top"
                         data-tooltip="Top three lead roles seprated with a comma ','"></i><i
                         class="fas fa-asterisk asterisk"></i></label>
             </div>
