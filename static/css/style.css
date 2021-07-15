@@ -109,7 +109,18 @@ nav {
 .login-section {
     margin-top: 7rem;
 }
-
+.log-card{
+    background-color: var(--shadow);
+    color: var(--white);
+    padding: 20px;
+}
+.reg-card{
+    background-color: var(--shadow);
+    color: var(--white);
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
 .log-container {
     display: flex;
     text-align: center;
@@ -277,13 +288,16 @@ nav {
 .margin-top-small {
     margin-top: 20px;
 }
-.margin-bottom-large{
+
+.margin-bottom-large {
     margin-bottom: 40px;
 }
-.margin-bottom-medium{
+
+.margin-bottom-medium {
     margin-bottom: 30px;
 }
-.margin-bottom-small{
+
+.margin-bottom-small {
     margin-bottom: 20px;
 }
 
@@ -361,7 +375,7 @@ nav {
 
 .input-field.col .prefix~label,
 .input-field.col .prefix~.validate~label {
-    color: var(--slate);
+    color: var(--gold);
 }
 
 .input-field .prefix~input,
@@ -372,12 +386,15 @@ nav {
 .input-field .prefix~.autocomplete-content {
     color: var(--slate);
 }
-.account-ancor{
+
+.account-ancor {
     color: var(--white);
 }
-.account-ancor:hover{
+
+.account-ancor:hover {
     color: var(--slate);
 }
+
 .film-card-buttons {
     display: inline-block;
     border-radius: 2em;
@@ -390,12 +407,14 @@ nav {
     text-align: center;
     transition: all 0.2s;
 }
-.film-card-info{
+
+.film-card-info {
     background-color: var(--shadow);
     color: var(--white);
     padding: 30px !important;
 }
-.film-card-title{
+
+.film-card-title {
     background-color: var(--shadow);
     color: var(--white);
     padding: 10px !important;
@@ -407,22 +426,43 @@ nav {
     background-color: var(--white);
     color: var(--slate);
 }
-.modal{
+
+.modal {
     background-color: var(--white);
     color: var(--slate);
 }
-.modal .modal-footer{
+
+.modal .modal-footer {
     background-color: var(--white);
 }
-.prefix{
+
+.prefix {
     color: var(--gold);
 }
-.film-card-responsive{
-    height: 640px;
+
+.film-card-responsive {
+    height: auto;
     width: 460px !important;
     max-width: 100%;
 }
-.film-placeholder-responsive{
+
+.film-placeholder-responsive {
     width: 460px !important;
     max-width: 100%;
+}
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+    color: var(--white) !important;
 }
