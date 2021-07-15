@@ -159,8 +159,7 @@ def edit_film(film_id):
             "created_by": session["user"]
         }
         mongo.db.films.update({"_id": ObjectId(film_id)}, film_update)
-        flash("Film Successfully Updated")
-    
+        flash("Film Successfully Updated")  
     selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("edit_film.html",
