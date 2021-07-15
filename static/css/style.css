@@ -395,17 +395,24 @@ nav {
     color: var(--white);
     padding: 30px !important;
 }
+.film-card-title{
+    background-color: var(--shadow);
+    color: var(--white);
+    padding: 10px !important;
+    width: 90%;
+    margin: auto;
+}
 
 .film-card-buttons:hover {
     background-color: var(--white);
     color: var(--slate);
 }
 .modal{
-    background-color: var(--shadow);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--slate);
 }
 .modal .modal-footer{
-    background-color: var(--shadow);
+    background-color: var(--white);
 }
 .prefix{
     color: var(--gold);
