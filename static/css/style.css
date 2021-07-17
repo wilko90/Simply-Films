@@ -429,7 +429,15 @@ img{
     width: 90%;
     margin: auto;
 }
-
+.film-image{
+    min-height: 30vh;
+    object-fit: cover;
+    display: block;
+    width: 80%;
+}
+.image-container{
+    margin: 0 auto;
+}
 .film-card-buttons:hover {
     background-color: var(--white);
     color: var(--slate);
