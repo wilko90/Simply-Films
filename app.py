@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 
 @app.route('/films')
 def films():
-    limit_per_page = 4
+    limit_per_page = 8
     
     current_page = int(request.args.get('current_page', 1))
     total = mongo.db.films.count()
