@@ -13,18 +13,18 @@
 
         <div class="row margin-top-large">
             <div class="col s12 m6">
-                <div class="img-film-card">
+                <div class="image-container">
                     {% if selected_film_card.film_url %}
                     
-                    <img src="{{ selected_film_card.film_url }}" class="film-card-responsive film-image z-depth-2" alt="Film Image">
+                    <img src="{{ selected_film_card.film_url }}" class="film-image responsive-img z-depth-2" alt="Film Image">
                     {% else %}
-                    <img src="/static/img/film-placeholder.jpeg" class="film-card-responsive film-image z-depth-2" 
+                    <img src="/static/img/film-placeholder.jpeg" class="film-image responsive-img z-depth-2" 
                         alt="No Image Available">
                     {% endif %}
                 </div>
             </div>
             <div class="col s12 m6 card film-card-info">
-                <div class="row center-align">
+                <div class="center-align">
                     <i class="fas fa-info prefix"></i>
                     <h5>Synopsis</h5>
                     <p class="film-card-synopsis">
