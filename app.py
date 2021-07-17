@@ -23,15 +23,16 @@ mongo = PyMongo(app)
 
 @app.route('/films')
 def films():
-    limit_per_page = 8
+    limit_per_page = 4
     
     current_page = int(request.args.get('current_page', 1))
-    pages = range(1, int(math.ceil(limit_per_page)) + 1)
+    total = mongo.db.films.count()
+    pages = range(1, int(math.ceil(total / limit_per_page)) + 1)
     films = list(mongo.db.films.find().sort('_id', pymongo.ASCENDING).skip(
         (current_page - 1)*limit_per_page).limit(limit_per_page))
     return render_template("films.html", films=films,
                            current_page=current_page,
-                           pages=pages,)
+                           pages=pages, total=total)
 
 
 
