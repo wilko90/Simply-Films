@@ -22,15 +22,29 @@
             {% for film in films %}
             {% include "placeholders/film_placeholder.html" %}
             {% endfor %}
+            
 
         </div>
         {% else %}
         <div class="center-align no-results">
             <h3>No Results Found</h3>
-            <a href="{{ url_for('films') }}" class="waves-effect waves-light home-button btn-large">Back to all films</a>
+            <a href="{{ url_for('films') }}" class="waves-effect waves-light home-button btn-large">Back to all
+                films</a>
         </div>
         {% endif %}
     </div>
+    <ul class="pagination center-align margin-bottom-large">
+        {% for page_num in pages %} 
+            {% if page_num == current_page %}
+            <li class="active"><a>{{ page_num }}</a></li>
+            {% else %}
+            <li class="waves-effect">
+            <a href="{{ url_for('films', current_page=page_num) }}">{{ page_num }}</a>
+            </li>
+            {% endif %} 
+        {% endfor %}
+      </ul>
+
 
 </div>
 {% endblock %}
