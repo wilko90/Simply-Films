@@ -2,12 +2,12 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-
+import math
 
 app = Flask(__name__)
 
@@ -20,11 +20,19 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route("/films")
+
+@app.route('/films')
 def films():
-    films = list(mongo.db.films.find())
-    return render_template("films.html", films=films)
+    limit_per_page = 8
+    
+    current_page = int(request.args.get('current_page', 1))
+    pages = range(1, int(math.ceil(limit_per_page)) + 1)
+    films = list(mongo.db.films.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*limit_per_page).limit(limit_per_page))
+    return render_template("films.html", films=films,
+                           current_page=current_page,
+                           pages=pages,)
+
 
 
 @app.route('/manage_films/<username>', methods=['GET', 'POST'])
@@ -37,7 +45,7 @@ def manage_films(username):
         return render_template(
             "manage_films.html", username=username,
             my_films=my_films)
-                            
+                           
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -45,7 +53,7 @@ def search():
     films = list(mongo.db.films.find({"$text": {"$search": query}}))
     return render_template("films.html", films=films)
 
-
+@app.route("/")
 @app.route("/home")
 def home():
     trending_films = ([films for films in mongo.db.films.aggregate([{"$sample": {"size": 4}}])])
