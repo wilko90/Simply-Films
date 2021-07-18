@@ -21,8 +21,10 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo" class="nav-colour">Logo</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
+                <a href="{{ url_for('home') }}" class="brand-logo" class="nav-colour">
+                    <img src="/static/img/logo.png" alt="logo">
+                </a>
+                <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}" class="nav-colour">Home</a></li>
                     <li><a href="{{ url_for('films') }}" class="nav-colour">Films</a></li>
