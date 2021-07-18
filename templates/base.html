@@ -44,16 +44,19 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}" class="nav-colour">Home</a></li>
             <li><a href="{{ url_for('films') }}" class="nav-colour">Films</a></li>
+            {% if session.user %}
             <li><a href="{{ url_for('add_film') }}" class="nav-colour">Add Film</a></li>
-            <li><a href="{{ url_for('manage_films', username=session['user']) }}" class="nav-colour">Manage Films</a>
-            </li>
-            <li><a href="{{ url_for('login') }}" class="nav-colour">Log In</a></li>
+            <li><a href="{{ url_for('manage_films', username=session['user']) }}" class="nav-colour">Manage
+                    Films</a></li>
             <li><a href="{{ url_for('logout') }}" class="nav-colour">Log Out</a></li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}" class="nav-colour">Log In</a></li>
             <li><a href="{{ url_for('register') }}" class="nav-colour">Register</a></li>
+            {% endif %}
         </ul>
     </header>
 
-    <section>
+    <section class="content">
             <!-- flash messages -->
             {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -77,11 +80,11 @@
         <div class="footer-copyright">
             <div class="container social-icons">
                 © 2021 Simply Films
-                <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
+                <a class="right" href="https://www.facebook.com/" target="_blank"><i
                         class="social fab fa-facebook"></i></a>
-                <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
+                <a class="right" href="https://www.instagram.com/" target="_blank"><i
                         class="social fab fa-instagram"></i></a>
-                <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
+                <a class="right" href="https://www.youtube.com/" target="_blank"><i
                         class="social fab fa-youtube"></i></a>
                 <a class="right" href="https://github.com/wilko90/Simply-Films" target="_blank"><i
                         class="social fab fa-github"></i></a>
