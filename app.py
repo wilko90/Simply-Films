@@ -46,6 +46,16 @@ def manage_films(username):
         return render_template(
             "manage_films.html", username=username,
             my_films=my_films)
+    
+    current_page = int(request.args.get('current_page', 1))
+    total = my_films.count()
+    pages = range(1, int(math.ceil(total / limit_per_page)) + 1)
+    films = my_films.sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*limit_per_page).limit(limit_per_page)
+    return render_template("manage_films.html", films=films,
+                           current_page=current_page,
+                           pages=pages, total=total, my_films=my_films)
+
                            
 
 @app.route("/search", methods=["GET", "POST"])
@@ -181,6 +191,7 @@ def delete_film(film_id):
     mongo.db.films.remove({"_id": ObjectId(film_id)})
     flash("Film Successfully Deleted")
     return redirect(url_for("films"))
+
 
 
 if __name__ == "__main__":
