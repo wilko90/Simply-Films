@@ -21,6 +21,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    flex: 1;
 }
 
 .bg-2 {
@@ -30,6 +31,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    flex: 1;
 }
 
 *,
@@ -43,6 +45,7 @@
 html {
     box-sizing: border-box;
     overflow-x: hidden;
+    height: 100%;
 }
 
 body {
@@ -53,6 +56,7 @@ body {
     font-family: var(--font);
     font-weight: bold;
 }
+
 
 nav {
     top: 0;
@@ -69,6 +73,7 @@ nav {
 
 .container {
     margin: 0 auto;
+    flex: 1;
 }
 
 
@@ -280,6 +285,8 @@ img{
 .page-footer {
     padding-top: 0;
     background-color: var(--slate);
+    position: sticky;
+    top: 100%;
 }
 
 .divider {
@@ -287,11 +294,11 @@ img{
 }
 
 .margin-top-large {
-    margin-top: 40px;
+    margin-top: 140px;
 }
 
 .margin-top-medium {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .margin-top-small {
@@ -456,7 +463,17 @@ img{
 .prefix {
     color: var(--gold);
 }
-
+.flashes {
+    position: absolute;
+    margin-top: 45px;
+    padding: 20px;
+    width: 100%;
+    font-size: 70%;
+    
+}
+.pagination li.active a{
+    background-color: var(--shadow);
+}
 
 
 
@@ -479,7 +496,15 @@ textarea.materialize-textarea {
     height: auto !important;
 }
 
-@media only screen and (min-width: 37.5em) {
+.error-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+@media only screen and (min-width: 600px) {
     html {
         font-size: 70%;
     }
@@ -488,7 +513,7 @@ textarea.materialize-textarea {
         height: 40vh;
     }
 }
-@media only screen and (min-width: 112.5em) {
+@media only screen and (min-width: 1800px) {
     html {font-size: 85%;}  
 
     .card .card-image img {
@@ -501,3 +526,4 @@ textarea.materialize-textarea {
                 height: 16vh;
             }
         }
+}
