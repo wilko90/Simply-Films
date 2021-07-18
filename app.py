@@ -193,6 +193,23 @@ def delete_film(film_id):
     return redirect(url_for("films"))
 
 
+@app.errorhandler(404)
+def error_404(error):
+    '''
+    Handles 404 error (page not found)
+    '''
+    return render_template('errors/404.html', error=True,
+                           title="Page not found"), 404
+
+
+@app.errorhandler(500)
+def error_500(error):
+    '''
+    Handles 500 error (internal server error)
+    '''
+    return render_template('errors/500.html', error=True,
+                           title="Internal Server Error"), 500
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
