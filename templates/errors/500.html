@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<div class="bg-2">
+    <div class="container margin-top-large">
+        <div class="error-container center-align">
+            <div>
+                <h1 class="uppercase">
+                    <span class="text-black"> 500</span> error
+                </h1>
+                <h3 class="margin-top-small">
+                    Something went wrong!
+                </h3>
+                <a href="{{ url_for('home')}}" class="home-button btn-large uppercase z-depth-3">Back Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
