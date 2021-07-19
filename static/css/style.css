@@ -236,12 +236,12 @@ img {
     height: 39vh;
     display: block;
     -o-object-fit: cover;
-    object-fit: cover;
+    object-fit: inherit;
 }
 
 .film-genre p {
     position: absolute;
-    background-color: var(--yellow);
+    background-color: var(--gold);
     top: 20px;
     right: 15px;
     border-radius: 5px;
