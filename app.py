@@ -1,4 +1,5 @@
 import os
+import math
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -7,7 +8,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-import math
+
 
 app = Flask(__name__)
 
@@ -23,7 +24,6 @@ mongo = PyMongo(app)
 @app.route('/films')
 def films():
     limit_per_page = 8
-    
     current_page = int(request.args.get('current_page', 1))
     total = mongo.db.films.count()
     pages = range(1, int(math.ceil(total / limit_per_page)) + 1)
@@ -43,7 +43,7 @@ def manage_films(username):
     if session['user']:
         return render_template(
             "manage_films.html", username=username,
-            my_films=my_films) 
+            my_films=my_films)
     limit_per_page = 8
     current_page = int(request.args.get('current_page', 1))
     total = my_films.count()
@@ -54,7 +54,6 @@ def manage_films(username):
                            current_page=current_page,
                            pages=pages, total=total, my_films=my_films)
 
-                           
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -62,10 +61,12 @@ def search():
     films = list(mongo.db.films.find({"$text": {"$search": query}}))
     return render_template("films.html", films=films)
 
+
 @app.route("/")
 @app.route("/home")
 def home():
-    trending_films = ([films for films in mongo.db.films.aggregate([{"$sample": {"size": 4}}])])
+    trending_films = ([films for films in mongo.db.films.aggregate(
+        [{"$sample": {"size": 4}}])])
     return render_template('home.html', trending_films=trending_films)
 
 
@@ -176,7 +177,7 @@ def edit_film(film_id):
             "created_by": session["user"]
         }
         mongo.db.films.update({"_id": ObjectId(film_id)}, film_update)
-        flash("Film Successfully Updated")  
+        flash("Film Successfully Updated")
     selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("edit_film.html",
