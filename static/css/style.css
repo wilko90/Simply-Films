@@ -7,6 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+/* Colours and Fonts */
 :root {
     --white: #fffff4;
     --red: #DB162F;
@@ -17,6 +18,7 @@
     --shadow: rgba(23, 24, 24, 0.747);
 }
 
+/* Background Images */
 .bg-1 {
     background-image: -o-radial-gradient(rgba(230, 238, 238, 0.603), rgba(150, 134, 132, 0.02)), url(/static/img/bg-1.jpeg);
     background-image: radial-gradient(rgba(230, 238, 238, 0.603), rgba(150, 134, 132, 0.02)), url(/static/img/bg-1.jpeg);
@@ -41,6 +43,7 @@
     flex: 1;
 }
 
+/* Structure */
 *,
 *::before,
 *::after {
@@ -71,17 +74,6 @@ body {
     font-weight: bold;
 }
 
-nav {
-    top: 0;
-    z-index: 100;
-    position: fixed;
-    background-color: var(--shadow);
-}
-
-.nav-colour {
-    color: var(--white);
-}
-
 .container {
     margin: 0 auto;
     -webkit-box-flex: 1;
@@ -94,6 +86,57 @@ nav {
     margin-top: 40px;
 }
 
+.divider {
+    background-color: var(--black);
+}
+
+/* Helpers */
+.margin-top-medium {
+    margin-top: 40px;
+}
+
+.margin-top-small {
+    margin-top: 20px;
+}
+
+.margin-bottom-large {
+    margin-bottom: 40px;
+}
+
+.margin-bottom-medium {
+    margin-bottom: 30px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 20px;
+}
+
+.margin-top-large {
+    margin-top: 140px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* Navbar */
+nav {
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    background-color: var(--shadow);
+}
+
+.nav-colour {
+    color: var(--white);
+}
+
+.main-heading {
+    color: var(--black);
+    margin-top: 40px;
+}
+
+/* Home Page */
 .home-paragpaph {
     margin-bottom: 3rem;
     text-transform: none;
@@ -130,6 +173,7 @@ nav {
     margin-top: 100px;
 }
 
+/* Login/Registration Page */
 .login-section {
     margin-top: 7rem;
 }
@@ -157,6 +201,23 @@ nav {
     -ms-flex-pack: center;
     justify-content: center;
     height: 100vh;
+}
+
+/* Buttons */
+.film-card-buttons {
+    display: inline-block;
+    border-radius: 2em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--font);
+    font-weight: 300;
+    color: var(--white);
+    background-color: var(--slate);
+    text-align: center;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .login-buttons {
@@ -199,6 +260,48 @@ nav {
 .submit-buttons:hover {
     background-color: var(--white);
     color: var(--slate);
+}
+
+.btn-floating i {
+    background-color: var(--slate);
+    color: var(--white) !important;
+}
+
+.btn-floating i:hover {
+    background-color: var(--white);
+    color: var(--slate) !important;
+}
+
+.film-card-buttons:hover {
+    background-color: var(--white);
+    color: var(--slate);
+}
+
+/* Film Cards */
+.film-card-info {
+    background-color: var(--shadow);
+    color: var(--white);
+    padding: 30px !important;
+}
+
+.film-card-title {
+    background-color: var(--shadow);
+    color: var(--white);
+    padding: 10px !important;
+    width: 90%;
+    margin: auto;
+}
+
+.film-image {
+    min-height: 30vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+    width: 80%;
+}
+
+.image-container {
+    margin: 0 auto;
 }
 
 .card .card-content .card-title {
@@ -281,6 +384,7 @@ img {
     color: var(--white);
 }
 
+/* Add/Edit Forms*/
 .dropdown-content li>a,
 .dropdown-content li>span {
     color: var(--white);
@@ -321,6 +425,7 @@ img {
     color: var(--red);
 }
 
+/* Footer */
 .page-footer {
     padding-top: 0;
     background-color: var(--slate);
@@ -329,44 +434,13 @@ img {
     top: 100%;
 }
 
-.divider {
-    background-color: var(--black);
-}
-
-.margin-top-large {
-    margin-top: 140px;
-}
-
-.margin-top-medium {
-    margin-top: 40px;
-}
-
-.margin-top-small {
-    margin-top: 20px;
-}
-
-.margin-bottom-large {
-    margin-bottom: 40px;
-}
-
-.margin-bottom-medium {
-    margin-bottom: 30px;
-}
-
-.margin-bottom-small {
-    margin-bottom: 20px;
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
 .social {
     font-size: 20px;
     padding-right: 10px;
     color: var(--white);
 }
 
+/* Search Bar */
 .search {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -423,16 +497,6 @@ img {
     background: none !important;
 }
 
-.btn-floating i {
-    background-color: var(--slate);
-    color: var(--white) !important;
-}
-
-.btn-floating i:hover {
-    background-color: var(--white);
-    color: var(--slate) !important;
-}
-
 .username-container {
     background-color: var(--shadow);
     color: var(--white);
@@ -464,53 +528,7 @@ img {
     color: var(--slate);
 }
 
-.film-card-buttons {
-    display: inline-block;
-    border-radius: 2em;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: var(--font);
-    font-weight: 300;
-    color: var(--white);
-    background-color: var(--slate);
-    text-align: center;
-    -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
-}
-
-.film-card-info {
-    background-color: var(--shadow);
-    color: var(--white);
-    padding: 30px !important;
-}
-
-.film-card-title {
-    background-color: var(--shadow);
-    color: var(--white);
-    padding: 10px !important;
-    width: 90%;
-    margin: auto;
-}
-
-.film-image {
-    min-height: 30vh;
-    -o-object-fit: cover;
-    object-fit: cover;
-    display: block;
-    width: 80%;
-}
-
-.image-container {
-    margin: 0 auto;
-}
-
-.film-card-buttons:hover {
-    background-color: var(--white);
-    color: var(--slate);
-}
-
+/* Modal */
 .modal {
     background-color: var(--white);
     color: var(--slate);
@@ -524,6 +542,7 @@ img {
     color: var(--gold);
 }
 
+/* Flash Messages */
 .flashes {
     position: absolute;
     margin-top: 45px;
@@ -535,6 +554,7 @@ img {
     font-size: 85%;
 }
 
+/* Pagination */
 .pagination li.active a {
     background-color: var(--shadow);
 }
@@ -559,6 +579,7 @@ textarea.materialize-textarea {
     height: auto !important;
 }
 
+/* Errors */
 .error-container {
     height: 100vh;
     width: 100%;
@@ -573,6 +594,8 @@ textarea.materialize-textarea {
     justify-content: center;
 }
 
+/* Media Queries */
+/* Large Screen Sizes */
 @media (max-width: 1024px) {
     .film-image {
         width: 100%;
@@ -616,6 +639,7 @@ textarea.materialize-textarea {
     }
 }
 
+/* Medium Screen Sizes - Tablets */
 @media (max-width: 768px) {
     .margin-top-large {
         margin-top: 30px;
@@ -661,6 +685,7 @@ textarea.materialize-textarea {
     }
 }
 
+/* Small Screen Sizes - Mobile */
 @media (max-width: 576px) {
     .films-h1 {
         font-size: 30px;
@@ -798,6 +823,7 @@ textarea.materialize-textarea {
     }
 }
 
+/* XSmall Screen Sizes */
 @media (max-width: 280px) {
     .username-container {
         width: 100%;
