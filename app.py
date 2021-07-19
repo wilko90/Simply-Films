@@ -21,8 +21,36 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+'''
+Home Page
+'''
+
+
+# Home Page
+@app.route("/")
+@app.route("/home")
+def home():
+    '''
+    Allows users to view 4 random films
+    from the database.
+    '''
+    trending_films = ([films for films in mongo.db.films.aggregate(
+        [{"$sample": {"size": 4}}])])
+    return render_template('home.html', trending_films=trending_films)
+
+
+'''
+Films Rotues
+'''
+
+
+# Films Page
 @app.route('/films')
 def films():
+    '''
+    Displays all the films from the database using pagination.
+    The limit is set to 8 films per page.
+    '''
     limit_per_page = 8
     current_page = int(request.args.get('current_page', 1))
     total = mongo.db.films.count()
@@ -34,8 +62,92 @@ def films():
                            pages=pages, total=total)
 
 
+# Search
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Allows user to search by film name or genre
+    """
+    query = request.form.get("query")
+    films = list(mongo.db.films.find({"$text": {"$search": query}}))
+    return render_template("films.html", films=films)
+
+
+# Add film
+@app.route("/add_film", methods=["GET", "POST"])
+def add_film():
+    """
+    Allows user to add a film to the database.
+    Only logged in users have the ablilty to
+    this function
+    """
+    if request.method == "POST":
+        films = {
+            "film_name": request.form.get("film_name"),
+            "film_synopsis": request.form.get("film_synopsis"),
+            "film_genre": request.form.get("film_genre"),
+            "film_year": request.form.get("film_year"),
+            "film_raiting": request.form.get("film_raiting"),
+            "film_actors": request.form.get("film_actors"),
+            "film_url": request.form.get("film_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.films.insert_one(films)
+        flash("Film Successfully Added")
+        return redirect(url_for("films"))
+    return render_template("add_film.html")
+
+
+# Film Card
+@app.route("/film_card/<film_id>")
+def film_card(film_id):
+    """
+    Displays information about a specific film,
+    also allows users that added the films to,
+    edit or delete
+    """
+    selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    return render_template("film_card.html",
+                           selected_film_card=selected_film_card,
+                           selected_film=selected_film)
+
+
+# Edit Film
+@app.route("/edit_film/<film_id>", methods=["GET", "POST"])
+def edit_film(film_id):
+    '''
+    provides the user with a form to edit task,
+    with pre-populated fields.
+    '''
+    if request.method == "POST":
+        film_update = {
+            "film_name": request.form.get("film_name"),
+            "film_synopsis": request.form.get("film_synopsis"),
+            "film_genre": request.form.get("film_genre"),
+            "film_year": request.form.get("film_year"),
+            "film_raiting": request.form.get("film_raiting"),
+            "film_actors": request.form.get("film_actors"),
+            "film_url": request.form.get("film_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.films.update({"_id": ObjectId(film_id)}, film_update)
+        flash("Film Successfully Updated")
+    selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    return render_template("edit_film.html",
+                           selected_film=selected_film,
+                           selected_film_card=selected_film_card)
+
+
+# Manage Films
 @app.route('/manage_films/<username>', methods=['GET', 'POST'])
 def manage_films(username):
+    '''
+    Displays the recipes created by logged in user in session.
+    If user has not created any films yet, there's a button "add film"
+    Pagination is in place diplaying 8 films per page.
+    '''
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     my_films = list(mongo.db.films.find({
@@ -55,23 +167,20 @@ def manage_films(username):
                            pages=pages, total=total, my_films=my_films)
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    films = list(mongo.db.films.find({"$text": {"$search": query}}))
-    return render_template("films.html", films=films)
+'''
+User Rotues
+'''
 
 
-@app.route("/")
-@app.route("/home")
-def home():
-    trending_films = ([films for films in mongo.db.films.aggregate(
-        [{"$sample": {"size": 4}}])])
-    return render_template('home.html', trending_films=trending_films)
-
-
+# Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Allows user to register their username and passoword.
+    Checks for existing user with matching username.
+    Checks passwords match.
+    Puts user into session.
+    """
     if request.method == "POST":
         # check if username exists
         existing_user = mongo.db.users.find_one(
@@ -98,8 +207,14 @@ def register():
     return render_template("register.html")
 
 
+# Login
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Allows user to login to profile.
+    Checks whether user exists and that passwords match.
+    Upon successful login, user redirected to user profile page.
+    """
     if request.method == "POST":
 
         existing_user = mongo.db.users.find_one(
@@ -125,6 +240,7 @@ def login():
     return render_template("login.html")
 
 
+# Logout
 @app.route('/logout')
 def logout():
     """
@@ -135,61 +251,16 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_film", methods=["GET", "POST"])
-def add_film():
-    if request.method == "POST":
-        films = {
-            "film_name": request.form.get("film_name"),
-            "film_synopsis": request.form.get("film_synopsis"),
-            "film_genre": request.form.get("film_genre"),
-            "film_year": request.form.get("film_year"),
-            "film_raiting": request.form.get("film_raiting"),
-            "film_actors": request.form.get("film_actors"),
-            "film_url": request.form.get("film_url"),
-            "created_by": session["user"]
-        }
-        mongo.db.films.insert_one(films)
-        flash("Film Successfully Added")
-        return redirect(url_for("films"))
-    return render_template("add_film.html")
-
-
-@app.route("/film_card/<film_id>")
-def film_card(film_id):
-    selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
-    selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
-    return render_template("film_card.html",
-                           selected_film_card=selected_film_card,
-                           selected_film=selected_film)
-
-
-@app.route("/edit_film/<film_id>", methods=["GET", "POST"])
-def edit_film(film_id):
-    if request.method == "POST":
-        film_update = {
-            "film_name": request.form.get("film_name"),
-            "film_synopsis": request.form.get("film_synopsis"),
-            "film_genre": request.form.get("film_genre"),
-            "film_year": request.form.get("film_year"),
-            "film_raiting": request.form.get("film_raiting"),
-            "film_actors": request.form.get("film_actors"),
-            "film_url": request.form.get("film_url"),
-            "created_by": session["user"]
-        }
-        mongo.db.films.update({"_id": ObjectId(film_id)}, film_update)
-        flash("Film Successfully Updated")
-    selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
-    selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
-    return render_template("edit_film.html",
-                           selected_film=selected_film,
-                           selected_film_card=selected_film_card)
-
-
 @app.route("/delete_film/<film_id>")
 def delete_film(film_id):
     mongo.db.films.remove({"_id": ObjectId(film_id)})
     flash("Film Successfully Deleted")
     return redirect(url_for("films"))
+
+
+'''
+Errors
+'''
 
 
 @app.errorhandler(404)
