@@ -1,59 +1,242 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">IFD Milestone Project - Simply Films </h1>
 
-Welcome wilko90,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+<img src=""> <img src="">
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+ [Click Here]()
 
-`python3 -m http.server`
+ **This website is for educational purposes only**
 
-A blue button should appear to click: _Make Public_,
+ # Table of Contents
+ 1. [UX](#ux)
+    * [Strategy](#sratergy-plane)
+    * [Scope](#scope)
+    * [Structure](#structure)
+    * [Skeleton](#skeleton-plane)
+    * [Surface](#surface-plane)
+2. [Features](#features)
+3. [Technologies](#technologies-used)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+6. [Credits](#credits)
+7. [Acknowledgements](#acknowledgements)
 
-Another blue button should appear to click: _Open Browser_.
+<h1 align="center">UX</h1> <a name="ux"></a>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# Strategy <a name="sratergy-plane"></a>
 
-A blue button should appear to click: _Make Public_,
+## Research
+### What are the most important aspects of a recipe website?
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+### Competitor Review
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+## Business Approach
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Mission Statment
+ 
+ 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Branding
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+   
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Content
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+ 
+### Aesthetics
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Pricing
+  
+    
 
----
 
-Happy coding!
+ ## User stories
+
+
+
+
+## opportunities and problems to be solved from user stories
+ 
+|Opportunities | Importance | Viability / Feasibility
+|-----|:------:|:-----:|
+|**Purpose Of Webpage Explained** | 5 | 5 |
+|**Intuitive Design** | 5 | 5 |
+|**Clear Instructions** | 5 | 5 |
+|**Easy Point Of Contact** | 5 | 3 |
+|**Clear Results**| 5 | 5 |
+|**Provide POI** | 3 | 4 |
+
+
+</div>
+
+
+# Scope <a name="scope"></a>
+
+## Website Requirements
+
+#### User Needs
+
+  
+#### Engagement
+
+ 
+
+#### Translates / Purpose
+
+
+
+
+# Structure <a name="structure"></a>
+
+
+
+## Home Page
+
+#### Home
+
+#### About Us
+
+
+#### Menu
+
+
+#### Contact
+
+#### Top Picks
+
+
+#### Modals
+
+
+
+#### Footer
+
+
+
+ 
+# Skeleton Plane <a name="skeleton-plane"></a>
+
+### Wireframes
+
+ 
+
+-  [Homepage](https://github.com/wilko90/Simply-Scran/blob/master/static/wireframes/homepage-desktop-tablet-mobile.png)
+
+
+# Surface Plane <a name="surface-plane"></a>
+
+## Brand Image
+
+<img src="static/img/readme-img/logo.png">
+
+
+
+## Colour Schemes
+
+<img src="static/img/readme-img/colour-palette.png">
+
+ 
+
+## Images
+
+
+
+## Visual Interactions
+### navbar
+ 
+
+<img src="static/img/readme-img/nav-bar.png">
+
+### Call To Action Buttons
+
+
+
+# Features <a name="features"></a>
+
+
+## Existing Features
+
+
+
+
+### Contact 
+
+ 
+### Favicon Iconfinder
+
+
+
+### Modals
+
+
+### Responsive Design
+
+
+## Features To Implement
+
+### Food Search Engine
+
+
+
+### Registration And Log In 
+
+
+
+### Social Platform 
+
+
+
+# Technologies Used <a name="technologies-used"></a>
+
+### Languages Used
+
+
+
+### Frameworks, Libraries and Programmes
+
+
+# Testing <a name="testing"></a>
+<img src="static/img/readme-img/responsive-test.png">
+
+For full testing section [click here](TESTING.md) 
+
+
+# Deployment <a name="deployment"></a>
+### How my project was deployed
+
+
+# Credits <a name="credits"></a>
+
+## Written Content
+
+All content is written by myself.
+
+## Modal Content 
+
+
+## Images
+
+
+## Code
+
+
+# Acknowledgements <a name="acknowledgements"></a>
+
+* The Inspiration for this project came from my love of food and drink. I aim to make functionality simple, eye catching design and consistent throughout.
+
+* Thank you to the slack community for guiding me in the right direction.
+
+* Thank you to my girlfriend for supporting me throughout this project. 
+
+* Thank you to the tutors at Code Institute.
+ 
+
