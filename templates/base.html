@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font Awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css" />
+    <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!--Link To Stylesheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">{% block styles %}
     {% endblock %}
+    <!--Favicon-->
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon-1.png') }}" 
     type="image/x-icon" sizes="200x200">
     <title>Simply Films</title>
@@ -20,6 +24,7 @@
 
 <body>
     <header>
+        <!--Nav-->
         <nav>
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo" class="nav-colour">
@@ -45,6 +50,7 @@
                 </ul>
             </div>
         </nav>
+        <!--Mobile Nav-->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}" class="nav-colour">Home</a>
             </li>
@@ -63,12 +69,14 @@
             </li>{% endif %}
         </ul>
     </header>
+    <!-- flash messages -->
     <section class="content">
-        <!-- flash messages -->{% with messages = get_flashed_messages() %} {% if messages %}
+        {% with messages = get_flashed_messages() %} {% if messages %}
         {% for message in messages %}
         <div class="row flashes">
             <h4 class="flash-text center-align">{{ message }}</h4>
         </div>{% endfor %} {% endif %} {% endwith %}</section>{% block content %} {% endblock %}
+    <!-- Social Links -->
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container social-icons">© 2021 Simply Films <a class="right" href="https://www.facebook.com/"
@@ -82,9 +90,12 @@
             </div>
         </div>
     </footer>
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Link To JS File -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>{% block scripts %} {% endblock %}
 </body>
 

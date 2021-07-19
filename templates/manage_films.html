@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Background Image -->
 <div class="bg-1">
     <div class="container margin-top-large">
         <div class="username-container">
@@ -18,6 +19,7 @@
                 <h5 class="center-align">
                     You haven't added any films yet. Click below to get started!
                 </h5>
+                <!-- Add Film Button -->
                 <div class="row center-align margin-top-large">
                     <a href="{{ url_for('films') }}" class="waves-effect waves-light home-button btn-large"><i
                             class="fas fa-plus"></i> Add film</a>
@@ -26,6 +28,7 @@
             </div>
         </section>
     </div>
+    <!-- Pagintaion -->
     <ul class="pagination center-align margin-bottom-large">
         {% for page_num in pages %}
         {% if page_num == current_page %}

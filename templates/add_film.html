@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Background Image -->
 <div class="bg-1">
     <div class="container margin-top-large media-h1">
         <h1 class=" films-h1 uppercase center-align margin-bottom-large">Add Film</h1>
         <div class="card add-film-card row">
             <form class="col s12 margin-top-medium" method="POST" action="{{ url_for('add_film') }}">
+                <!-- Film Name -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-film prefix text-darken-4"></i>
@@ -15,6 +17,7 @@
                                 class="fas fa-asterisk asterisk"></i></label>
                     </div>
                 </div>
+                <!-- Film Synopsis -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-info prefix "></i>
@@ -26,6 +29,7 @@
                                 class="fas fa-asterisk asterisk"></i></label>
                     </div>
                 </div>
+                <!-- Film Genre -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-theater-masks prefix "></i>
@@ -47,6 +51,7 @@
                         <label for="film_genre">Film Genre <i class="fas fa-asterisk asterisk"></i></label>
                     </div>
                 </div>
+                <!-- Film Year -->
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-history prefix"></i>
@@ -55,6 +60,7 @@
                         <label for="film_year">Year <i class="fas fa-question-circle tooltipped" data-position="top"
                                 data-tooltip="E.g. 2021"></i><i class="fas fa-asterisk asterisk"></i></label>
                     </div>
+                    <!-- Film Raiting -->
                     <div class="input-field col s6">
                         <i class="fas fa-star prefix"></i>
                         <input id="film_raiting" name="film_raiting" type="number" minlength="1" maxlength="2"
@@ -64,6 +70,7 @@
                                 class="fas fa-asterisk asterisk"></i></label>
                     </div>
                 </div>
+                <!-- Film Actors -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-friends prefix"></i>
@@ -74,6 +81,7 @@
                                 class="fas fa-asterisk asterisk"></i></label>
                     </div>
                 </div>
+                <!-- Film Image -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="far fa-image prefix"></i>
@@ -85,6 +93,7 @@
                         </label>
                     </div>
                 </div>
+                <!-- Add Film Button -->
                 <div class="row">
                     <div class="col s12 center-align">
                         <button type="submit" class="btn-large submit-buttons text-shadow">

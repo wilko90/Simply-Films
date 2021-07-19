@@ -1,12 +1,15 @@
+<!--Film Card-->
 <div class="col s12 m6 l3">
-
     <div class="card">
         <div class="card-image">
+            <!--If recipe image is assigned, Image will be displayd-->
             <a href="{{ url_for('film_card', film_id=film._id) }}">
                 {% if film.film_url %}
                 <img src="{{ film.film_url}}" class="film-placeholder-responsive" alt="Film Image">
                 {% else %}
-                <img src="/static/img/film-placeholder.jpeg" class="film-placeholder-responsive" alt="No Image Available">
+                <!--If recipe image is not assigned, Image placeholder will be displayd-->
+                <img src="/static/img/film-placeholder.jpeg" class="film-placeholder-responsive"
+                    alt="No Image Available">
                 {% endif %}
             </a>
         </div>
@@ -21,8 +24,6 @@
                     {{ film.film_name }}
                 </span>
             </div>
-            
         </div>
     </div>
-
 </div>

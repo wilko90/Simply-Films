@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Background Image -->
 <div class="bg-2">
     <div class="container">
         <div class="log-container">
@@ -8,6 +9,7 @@
                 <div class="reg-card row">
                     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
                         <div class="col s12">
+                            <!-- Username -->
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">person</i>
@@ -22,6 +24,7 @@
                             </div>
                         </div>
                         <div class="col s12">
+                            <!-- Password -->
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">lock</i>
@@ -36,6 +39,7 @@
                         </div>
                         <div class="col s12">
                             <div class="row">
+                                <!-- Confirm Password -->
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">lock</i>
                                     <input type="password" name="confirm-password" id="confirm-password"
@@ -46,11 +50,13 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Register Button -->
                         <div class="row">
                             <button type="submit" class="col s12 login-buttons btn-large">
                                 Register
                             </button>
                         </div>
+                        <!-- Link to login page -->
                         <div class="row center-align">
                             <div class="col s12">
                                 <small>Already have an account?

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Background Image -->
 <div class="bg-1">
     <div class="container margin-top-large">
         <h1 class="films-h1 uppercase center-align">
@@ -10,6 +11,7 @@
         <div class="divider"></div>
         <div class="row margin-top-medium">
             <div class="col s12 m6">
+                <!-- Film Image -->
                 <div class="image-container">
                     {% if selected_film_card.film_url %}
 
@@ -21,6 +23,7 @@
                     {% endif %}
                 </div>
             </div>
+            <!-- Film Synopsis -->
             <div class="col s12 m6 card film-card-info">
                 <div class="center-align">
                     <i class="fas fa-info prefix"></i>
@@ -29,23 +32,27 @@
                         {{ selected_film_card.film_synopsis }}
                     </p>
                 </div>
+                <!-- Film Genre -->
                 <div class="row center-align film-card-margin">
                     <div class="col s6">
                         <i class="fas fa-theater-masks prefix"></i>
                         <h5>Genre</h5>
                         <p>{{ selected_film_card.film_genre }}</p>
                     </div>
+                    <!-- Film Year -->
                     <div class="col s6">
                         <i class="fas fa-history prefix"></i>
                         <h5>Year</h5>
                         <p>{{ selected_film_card.film_year }}</p>
                     </div>
+                    <!-- Film Raiting -->
                     <div class="col s12 film-card-margin">
                         <i class="fas fa-star prefix"></i>
                         <h5>Raiting</h5>
                         <p>{{ selected_film_card.film_raiting }}/10</p>
                     </div>
                 </div>
+                <!-- Film Actors -->
                 <div class="row center-align">
                     <i class="fas fa-user-friends prefix"></i>
                     <h5>Actors</h5>
@@ -53,7 +60,7 @@
                         {{ selected_film_card.film_actors }}
                     </p>
                 </div>
-
+                <!-- User Created -->
                 <div class="film-card-margin">
                     <p class="center-align">
                         <span class="film-created-by">Created By:</span>
@@ -61,6 +68,7 @@
                     </p>
                 </div>
             </div>
+            <!-- Back/Edit/Delete Buttons -->
             <div class="row">
                 <div class="col s12 m6 center-align film-card-triggers">
                     <a onclick="back()" class="btn film-card-buttons">
@@ -73,7 +81,6 @@
                         <div class="modal-content">
                             <h4>Delete!</h4>
                             <p class="margin-bottom-small">Are you sure to remove?</p>
-
                             <a href="" class="modal-close btn film-card-buttons">Back</a>
                             <a href="{{ url_for('delete_film', film_id=selected_film._id) }}"
                                 class="modal-close btn film-card-buttons">Delete</a>
