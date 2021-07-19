@@ -5,13 +5,11 @@
         <div class="username-container">
             <h1 class=" films-h1 user-name-h1 center-align margin-bottom-large">{{ username }}</h1>
         </div>
-
         <section>
             <div class="row">
-                <h3 class="center-align margin-bottom-large uppercase media-h3">My films 
+                <h3 class="center-align margin-bottom-large uppercase media-h3">My films
                     <a href="{{ url_for('add_film') }}" class="btn-floating btn-medium"><i
                             class="material-icons">add</i></a></h3>
-
             </div>
             <div class="row">
                 {% for film in my_films %}

@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="bg-1">
-<div class="container">
-    <div class="row">
-        <div class="main-heading center-align">
-            <h1 class="uppercase films-h1">Simply Films</h1>
-            <p class="home-paragpaph">
-                Where Movie Lovers Belong
-            </p>
-            <a href="{{ url_for('films') }}" class="waves-effect waves-light home-button btn-large">Browse Our Films</a>
+    <div class="container">
+        <div class="row">
+            <div class="main-heading center-align">
+                <h1 class="uppercase films-h1">Simply Films</h1>
+                <p class="home-paragpaph">
+                    Where Movie Lovers Belong
+                </p>
+                <a href="{{ url_for('films') }}" class="waves-effect waves-light home-button btn-large">Browse Our
+                    Films</a>
+            </div>
+        </div>
+        <div class="row trending-films">
+            <h4 class="home-sub-heading uppercase center-align">Trending Films </h4>
+        </div>
+        <div class="divider"></div>
+        <div class="row margin-top-medium">
+            {% for film in trending_films %}
+            {% include "placeholders/film_placeholder.html" %}
+            {% endfor %}
         </div>
     </div>
-    <div class="row trending-films">
-        <h4 class="home-sub-heading uppercase center-align">Trending Films </h4>
-    </div>
-    <div class="divider"></div>
-    <div class="row margin-top-medium">
-        {% for film in trending_films %}
-        {% include "placeholders/film_placeholder.html" %}
-        {% endfor %}
-    </div>
-</div>
 </div>
 {% endblock %}

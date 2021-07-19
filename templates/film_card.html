@@ -4,21 +4,19 @@
     <div class="container margin-top-large">
         <h1 class="films-h1 uppercase center-align">
             <div class="film-card-title">
-            {{ selected_film_card.film_name }}
-        </div>
+                {{ selected_film_card.film_name }}
+            </div>
         </h1>
-
-    <div class="divider"></div>
-
-
+        <div class="divider"></div>
         <div class="row margin-top-medium">
             <div class="col s12 m6">
                 <div class="image-container">
                     {% if selected_film_card.film_url %}
-                    
-                    <img src="{{ selected_film_card.film_url }}" class="film-image responsive-img z-depth-2" alt="Film Image">
+
+                    <img src="{{ selected_film_card.film_url }}" class="film-image responsive-img z-depth-2"
+                        alt="Film Image">
                     {% else %}
-                    <img src="/static/img/film-placeholder.jpeg" class="film-image responsive-img z-depth-2" 
+                    <img src="/static/img/film-placeholder.jpeg" class="film-image responsive-img z-depth-2"
                         alt="No Image Available">
                     {% endif %}
                 </div>
@@ -55,14 +53,13 @@
                         {{ selected_film_card.film_actors }}
                     </p>
                 </div>
-            
-                    <div class="film-card-margin">
-                        <p class="center-align">
-                            <span class="film-created-by">Created By:</span>
-                            {{ selected_film_card.created_by }}
-                        </p>
-                    </div>
 
+                <div class="film-card-margin">
+                    <p class="center-align">
+                        <span class="film-created-by">Created By:</span>
+                        {{ selected_film_card.created_by }}
+                    </p>
+                </div>
             </div>
             <div class="row">
                 <div class="col s12 m6 center-align film-card-triggers">
@@ -71,7 +68,6 @@
                     </a>
                     {% if session.user|lower == selected_film_card.created_by|lower %}
                     <a class="btn film-card-buttons modal-trigger" href="#delete_modal">Delete</a>
-
                     <!-- Modal Structure -->
                     <div id="delete_modal" class="modal">
                         <div class="modal-content">
@@ -81,17 +77,14 @@
                             <a href="" class="modal-close btn film-card-buttons">Back</a>
                             <a href="{{ url_for('delete_film', film_id=selected_film._id) }}"
                                 class="modal-close btn film-card-buttons">Delete</a>
-
                         </div>
                     </div>
                     <a href="{{ url_for('edit_film', film_id=selected_film._id) }}"
                         class="btn film-card-buttons">Edit</a>
-
                     {% endif %}
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

@@ -1,50 +1,28 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="bg-1">
     <div class="container margin-top-large media-h1">
-
         <h1 class=" films-h1 uppercase center-align margin-bottom-large">Films</h1>
-
-
-
         <div class="search-box">
             <form action="{{ url_for('search') }}" method="POST" class="search">
                 <input class="search-input" type="text" name="query" id="query" minlength="1" required
                     placeholder="Search Film Name or Genre...">
-                <button class="search-bar"><i class="fa fa-search"></i></button>
+                <button class="search-bar"><i class="fa fa-search"></i>
+                </button>
             </form>
         </div>
-
-        <div class="row">
-            {% if films|length > 0 %}
-
-
-            {% for film in films %}
-            {% include "placeholders/film_placeholder.html" %}
-            {% endfor %}
-            
-
-        </div>
-        {% else %}
+        <div class="row">{% if films|length > 0 %} {% for film in films %}
+            {% include "placeholders/film_placeholder.html" %} {% endfor %}</div>{% else %}
         <div class="center-align no-results">
             <h3>No Results Found</h3>
             <a href="{{ url_for('films') }}" class="waves-effect waves-light home-button btn-large">Back to all
                 films</a>
-        </div>
-        {% endif %}
+        </div>{% endif %}
     </div>
-    <ul class="pagination center-align margin-bottom-large">
-        {% for page_num in pages %} 
-            {% if page_num == current_page %}
-            <li class="active"><a>{{ page_num }}</a></li>
-            {% else %}
-            <li class="waves-effect">
-            <a href="{{ url_for('films', current_page=page_num) }}">{{ page_num }}</a>
-            </li>
-            {% endif %} 
-        {% endfor %}
-      </ul>
-
-
-</div>
-{% endblock %}
+    <ul class="pagination center-align margin-bottom-large">{% for page_num in pages %}
+        {% if page_num == current_page %}
+        <li class="active"><a>{{ page_num }}</a>
+        </li>{% else %}
+        <li class="waves-effect"> <a href="{{ url_for('films', current_page=page_num) }}">{{ page_num }}</a>
+        </li>{% endif %} {% endfor %}
+    </ul>
+</div>{% endblock %}
