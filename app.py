@@ -20,7 +20,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 @app.route('/films')
 def films():
     limit_per_page = 8
@@ -35,7 +34,6 @@ def films():
                            pages=pages, total=total)
 
 
-
 @app.route('/manage_films/<username>', methods=['GET', 'POST'])
 def manage_films(username):
     username = mongo.db.users.find_one(
@@ -45,8 +43,8 @@ def manage_films(username):
     if session['user']:
         return render_template(
             "manage_films.html", username=username,
-            my_films=my_films)
-    
+            my_films=my_films) 
+    limit_per_page = 8
     current_page = int(request.args.get('current_page', 1))
     total = my_films.count()
     pages = range(1, int(math.ceil(total / limit_per_page)) + 1)
@@ -112,7 +110,7 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for("films"))
+                return redirect(url_for("home"))
             else:
 
                 flash("Incorrect Username and/or Password")
