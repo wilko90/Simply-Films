@@ -1,9 +1,9 @@
-<h1 align="center"><img src="static/img/logo.png" alt="logo">
+<h1 align="center"><img src="https://i.ibb.co/Lh8BjJr/5b8494bf96874e198f9d8658965f6a6c.png" alt="logo">
 
 Data Centric Development Milestone Project - Simply Films </h1>
 
 
-<img src="static/img/logo1.png"> 
+
 
 Simply Films is a full-stack MongoDB-based Flask project which is to create a database of films that allows users to create, read, update and delete (CRUD) films. Simply Films allows non registered users to browse our database to search for there favourite films. Users are given the opportunity to create an account and benifit from having access to all features of the website. Registered users can add new films, edit and delete there films.
 
@@ -212,70 +212,152 @@ Used for defensive programming. Activated when user trys to delete data to confi
 # Skeleton Plane <a name="skeleton-plane"></a>
 
 ### Wireframes
+During the development process, changes have been made. All wireframes are the core skeleton to aid in the planning process and are not the final look of the design. I recommend that the PNGs are downloaded to be viewed in your browser.
 
- [Homepage](https://github.com/wilko90/Simply-Scran/blob/master/static/wireframes/homepage-desktop-tablet-mobile.png)
 
+ [Homepage](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-homepage.png)<br>
+  [Films](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-homepage.png)<br>
+  [Film Card](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-filmdetails.png)<br>
+ [Login](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-login.png)<br>
+  [Register](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-register.png)<br> 
+  [Add Film](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/only-films-addfilm.png)<br>
+  [Mobile 1](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/mobile-home-film-login.png)<br>
+   [Mobile 2](https://github.com/wilko90/Simply-Films/blob/master/static/wireframes/mobile-add-detials-register.png)<br>
+  
+## Database
+ SImply films utalises a cloud based platform [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_emea_united_kingdom_search_core_brand_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624581&gclid=Cj0KCQjw6NmHBhD2ARIsAI3hrM2hjaQUTv9xllyb3-NF69pKMRPU4st3mjFIaAsCYspGVAxQP06qyYUaAiIiEALw_wcB) for storing user credentials and film data. My project users two collections 'Users' and 'Films'.
+ <img src="https://i.ibb.co/FDLzsD8/Screenshot-2021-07-20-at-16-55-19.png"><br>
 
 # Surface Plane <a name="surface-plane"></a>
 
 ## Brand Image
 
-<img src="static/img/readme-img/logo.png">
+<img src="static/img/logo.png"><br>
+The brand image/logo for "Simply Films" had to be simple, easy on the eye and be relevent to the webpage. It is located at the head of the page and when engaged navigates the user back to the home section.
 
 
 
 ## Colour Schemes
+The project's design is to remain consistent throughout, the aim was to implement a livley palette that is eye catching for the user. This was designed with the main font [Roboto](https://fonts.google.com/specimen/Roboto) a smart and professional font.
+<img src="https://i.ibb.co/cJBygpL/Screenshot-2021-07-20-at-16-15-47.png">
 
-<img src="static/img/readme-img/colour-palette.png">
+All colour choices were assessed within the guidelines of [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG20/). Each colour was used with [Contrast Ratio](https://contrast-ratio.com/#%23212121-on-%23F0F3F4) and graded within the guidelines of [W3](https://www.w3.org/TR/WCAG20/) .
 
- 
+## Text colours
+#### White/Slate (##fffff4)(#232b2b)
+predominantly all text is white on a slate background which I have added a slight oppacity to it for a visual effect, which displays a strong contrast between content.
 
+<img src="https://i.ibb.co/9sFgXsn/Screenshot-2021-07-20-at-17-33-22.png"> <img src="https://i.ibb.co/ZK91pf4/Screenshot-2021-07-20-at-17-52-22.png">
+
+## Typography
+### Body
+[Roboto](https://fonts.google.com/specimen/Roboto) was my font of choice due to its clean simplistic properties which adds professionlism. 
+
+### Logo
+[Bungee](https://fonts.google.com/specimen/Bungee) was used as the logo font which has a fun and friendly feel 
 ## Images
-
+### Background images 
+There are two sets of background images used, one for the login/registration/error pages and another for all remainding pages. Images are sourced from [Adobe Stock](https://stock.adobe.com/uk/)
+### Image Placeholder
+If a user does not add an image url when adding a film to the database a place holder will take that space. Image was sourced from [Adobe Stock](https://stock.adobe.com/uk/)
+### Logo
+The logo was made from a free editor called [Free Logo Design](https://editor.freelogodesign.org/)
+### Favicon
+Favicon was made from a free editor called [Icons8](https://icons8.com/icons/set/favicon)
+### Film Imagery
+All film images are added via a image hosting service and created by the users.
 
 
 ## Visual Interactions
-### navbar
- 
 
-<img src="static/img/readme-img/nav-bar.png">
+## Opacity
+I use opacity to really help important contant stand out with having background imagery on all pages. It also adds a sense of depth by layering different colours.
+
+* Navbar
+* Modals
+* Film info
+* Film Title
+* Register
+* Login
+
+<img src="https://i.ibb.co/K6214pY/Screenshot-2021-07-20-at-18-42-47.png">
+
+## navbar
+The navbar is the main method of navigating throughout the site and is a key role in aiding in strong UX. When hovered over desired link an opaqe highlight is shown. 
+
+<img src="https://i.ibb.co/gRk70Rk/Screenshot-2021-07-20-at-18-25-39.png">
 
 ### Call To Action Buttons
+The point of contact needs to be appealing and interactive. for the main C2A points, I went into detail about styling which provides the user with a visual appearance. As C2A points are important in providing a good UX, I kept the consistent feel of freshness. When idal the C2A are white text with a slate background, once intiuated the colours change opposite. 
 
+<img src="https://i.ibb.co/pn9shFW/Screenshot-2021-07-20-at-18-49-33.png">
+<img src="https://i.ibb.co/CzQ66bK/Screenshot-2021-07-20-at-18-50-38.png">
 
 
 # Features <a name="features"></a>
 
-
 ## Existing Features
+### Home Page and Trending Films 
+The home page contains a button that redirects a user to the "Films" page. It also displays 4 random images from the database using the $sample function of MongoDB.
+<img src="https://i.ibb.co/ThPhhD2/Screenshot-2021-07-20-at-18-57-59.png">
 
+### Films Page
 
+The films page displays film cards sorted from the oldest to the most recently added. All film cards are clickable and redirect a user to the individual film page with detailed information. The pagination at the bottom of the page allows to display 8 films per page.
 
+<img src="https://i.ibb.co/crRh8XJ/Screenshot-2021-07-20-at-19-04-26.png">
 
-### Contact 
+### Film Information
 
- 
-### Favicon Iconfinder
+The film_card page renders when user clicks on the film card. It displays information about the selected film: Name, Synopsis, Genre, Raiting, Year, Actor and film image (or film placeholder if no image was added by user). If the user created the film, there are buttons "Edit" and "Delete", that redirect to the edit and delete film pages.
 
+<img src="https://i.ibb.co/4KxTb1Z/Screenshot-2021-07-20-at-19-11-22.png">
 
+### Register
+The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. A username must be 5-15 characters long containg a captial and a number. The same requirement applies to the password field. The "confirm password" field must match the original password. All passwords are hashed for security purposes. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
 
-### Modals
+ <img src="https://i.ibb.co/tK05NST/Screenshot-2021-07-20-at-19-18-51.png">
 
+### Login
+The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password match the ones in the database, a user is redirected to the home page and informed that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
 
-### Responsive Design
+<img src="https://i.ibb.co/L0fvj1t/Screenshot-2021-07-20-at-19-22-13.png">
+
+### Log Out
+"logout" button by the logged in users ends their session and redirects to the login page.
+
+### Manage Films
+Manage Films page allows registered users to view all their Films that they added to the database. Next to the users login name there is a button "Add button" that redirects a user to the "Add films" page. If user has not created any films yet, there's a message that asks a user to create one.
+
+<img src="https://i.ibb.co/yFXFkY6/Screenshot-2021-07-20-at-19-29-10.png">
+
+### Add Film
+
+Registered users can add new Films through the form. There are some validations in place - all the fields except "Image URL" are required. For the "Film Name" and "Film Synopsis" fields, limit of characters is set. If user does not provide a URL to the film image, the film placeholder will be assigned for that film. There is also a Tooltip-instruction saying that a user can upload an image to a free image hosting website.
+After the succsessful addition, a user is redirected to the films page.
+
+<img src="https://i.ibb.co/yhgn2rV/Screenshot-2021-07-20-at-19-36-51.png">
+
+### Edit Film
+Edit film page allows the logged in user to update information about the film. The "Edit" button will appear by the created user.
+As well as that, the defensive design (against brute-forcing) in place allows only created user of the recipe to make changes. The form is pre-populated with the original recipe's details. After clicking "Edit recipe" button, the recipe is updated in the database and a user is prompted with a successful flash image.
+There is also a button "Cancel" that simply redirects a user to the home page (in order to avoid to hit "back" button in a browser)
+
+<img src="https://i.ibb.co/105g7TN/Screenshot-2021-07-20-at-19-41-28.png">
+
+### Delete Film
+The delete film function allows only created user of the film to delete it. After a user clicks the "delete" button in the film card page, the modal will be opened. It asks a user to confirm if the film needs to be removed. If so, upon clicking "delete" button the film will be removed from the database as well as from the "films" field of the films created_by in "users" collection. There is also a button "cancel" that closes the modal when it's clicked.
+
+<img src="https://i.ibb.co/HDpZ8HK/Screenshot-2021-07-20-at-19-44-49.png">
+
+### 404 and 500 error pages
+404 and 500 pages contain short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
+
+<img src="https://i.ibb.co/c1SJkkN/Screenshot-2021-07-20-at-20-00-34.png">
 
 
 ## Features To Implement
 
-### Food Search Engine
-
-
-
-### Registration And Log In 
-
-
-
-### Social Platform 
 
 
 
