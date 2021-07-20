@@ -319,7 +319,7 @@ nav {
 
 .card {
     border-radius: 2.5rem;
-    background-color: var(--slate);
+    background-color: var(--shadow);
     -webkit-box-shadow: var(--shadow);
     box-shadow: var(--shadow);
 }
