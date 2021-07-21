@@ -232,7 +232,7 @@ During the development process, changes have been made. All wireframes are the c
 
 ## Brand Image
 
-<img src="static/img/logo.png"><br>
+<img src="static/img/logo1.png"><br>
 The brand image/logo for "Simply Films" had to be simple, easy on the eye and be relevent to the webpage. It is located at the head of the page and when engaged navigates the user back to the home section.
 
 
@@ -342,8 +342,14 @@ After the succsessful addition, a user is redirected to the films page.
 Edit film page allows the logged in user to update information about the film. The "Edit" button will appear by the created user.
 As well as that, the defensive design (against brute-forcing) in place allows only created user of the recipe to make changes. The form is pre-populated with the original recipe's details. After clicking "Edit recipe" button, the recipe is updated in the database and a user is prompted with a successful flash image.
 There is also a button "Cancel" that simply redirects a user to the home page (in order to avoid to hit "back" button in a browser)
-
 <img src="https://i.ibb.co/105g7TN/Screenshot-2021-07-20-at-19-41-28.png">
+
+### Search
+The search film function is based on the Film name or by specific genre, allowing user to search for a desired film. This will filter all films listed by specific genre or if the user was searching for a specific film name. this allows for a more detailed search. If the search does not show any results the user is prompted and a 'back to all films' button is shown.
+
+<img src="https://i.ibb.co/k0TkVPN/Screenshot-2021-07-21-at-07-44-05.png">
+<img src="https://i.ibb.co/zVqwVBv/Screenshot-2021-07-21-at-07-44-45.png">
+
 
 ### Delete Film
 The delete film function allows only created user of the film to delete it. After a user clicks the "delete" button in the film card page, the modal will be opened. It asks a user to confirm if the film needs to be removed. If so, upon clicking "delete" button the film will be removed from the database as well as from the "films" field of the films created_by in "users" collection. There is also a button "cancel" that closes the modal when it's clicked.
@@ -357,51 +363,215 @@ The delete film function allows only created user of the film to delete it. Afte
 
 
 ## Features To Implement
+### Watchlist 
+Watchlist feature which allows you to track upcoming movies that you want to watch.
 
+### News
+A news section to keep users up to date with upcoming film relelases or for other kinds of related industry news.
 
+### User Settings Page
+Due to time constraints I could not implement a settings page. I would add functionality for users to be able to change there username, password or delete an account 
 
 
 # Technologies Used <a name="technologies-used"></a>
 
-### Languages Used
+### Development
+* [GitPod](https://www.gitpod.io/) / [VS Studio](https://code.visualstudio.com/) - an online IDE for developing this project .
+* [Git](https://git-scm.com/) - for version control.
+* [GitHub](https://git-scm.com/) - for remotely storing project's code.
+* The project was debugged using [Google Chrome Dev](https://developer.chrome.com/docs/devtools/) tools.
+* The template I used as a guide made from [Code Institute](https://github.com/Code-Institute-Org/gitpod-full-template).
 
+# Python
+This project uses Python version 3.8.10 for a back-end high level programming language
+#### Packages
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) a web Application Microframework
+* [PyMongo](https://api.mongodb.com/python/current/) - for Python to get access to the MongoDB database
+* [Werkzeug 2.0.1](https://werkzeug.palletsprojects.com/en/0.16.x/) - to generate and verify password hashing.
+* [Jinja 3.0.1](https://jinja.palletsprojects.com) - templating language for Python, to display back-end data in HTML.
+### Database
+* The project uses [MongoDB](https://www.mongodb.com/), a document-based NoSQL Database, for data storage.
+### Hosting
+This website is hosted through [Heroku](https://dashboard.heroku.com/).
+### Libraries
+* [Materialize 1.0.0](https://materializecss.com/) - main responsive modern front-end framework used for grid and responsivesness.
+* [Google Fonts](https://fonts.google.com/) - To import fonts.
+* [FontAwesome](https://fontawesome.com/) - Icons used across the project. 
+* [JQuery 3.6.0](https://jquery.com/) - to simplify DOM manipulation and to initialize Materialize functions.
+### Other Languages Used
+* [HTML](https://en.wikipedia.org/wiki/HTML) was used as the standard mockup language to build my project.
+* [CSS](https://en.wikipedia.org/wiki/CSS) was used to style my website and implement my ideas from the surface plane.
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)was used to implement interactive features.
 
+### Design
 
-### Frameworks, Libraries and Programmes
+* [ImgBB](https://imgbb.com/) - to host images used in README
+* [Techsini](https://techsini.com/multi-mockup/index.php) A tool I used to show that my design is responsive.
+*  My projects [Favicon-generator](https://www.favicon-generator.org/) to convert the Favicon to the appropriate format.
+* The wireframes were made with a programme called [balsamiq](https://balsamiq.com/).
+* CSS code beautified with [minifycocde](http://minifycode.com/css-beautifier/).
+* HTML code formatted using [Github](https://www.gitpod.io/docs/tips-and-tricks/#format-document) formating tool 
+
+### Validators
+* My projects colour ratio was tested with [webaim](https://webaim.org/resources/contrastchecker/).
+* My projects logo and typography was graded with [W3](https://www.w3.org/TR/WCAG/#contrast-minimum) guidelines.
+* The project’s HTML was validated using [W3C](https://validator.w3.org/) HTML Markup Validator.
+* The project’s CSS was validated using W3C [Jigsaw](https://jigsaw.w3.org/css-validator/) CSS Validator.
+* The project’s JS was validated using [JSHint](https://jshint.com/).
+
 
 
 # Testing <a name="testing"></a>
-<img src="static/img/readme-img/responsive-test.png">
+<img src="https://i.ibb.co/0pNwW1c/Screenshot-2021-07-21-at-10-29-13.png">
 
 For full testing section [click here](TESTING.md) 
 
 
 # Deployment <a name="deployment"></a>
-### How my project was deployed
+
+## How my project was deployed
+This project was deployed to Heroku via the following steps:
+
+* Navigate to Heroku.
+* Log in or Sign Up for an account.
+* If Creating an account, select Python as the Primary development language.
+* Activate the account via the confirmation email.
+* Accept the Terms of Service.
+* Click on Create new app.
+* Enter a suitable App Name and Region.
+* Click Create App.
+* Under the Deploy tab, under the heading Deployment Method, click the GitHub icon, and proceed * to click the button which states Connect to GitHub.
+* Enter your credentials for GitHub.
+* Search for the repository required, and click Connect.
+
+## Automatic Deployment
+
+This project was set up to automatically re-deploy with any changes made to the Master Branch. The following steps were taken to enable this.
+
+* Navigate to the Automatic deploys section within the Deploy tab.
+* Select the branch you would like to link to automatic deployment.
+  * the master branch was chosen for automatic deployment.
+* Click Enable Automatic Deploys.
+
+## Environment Variables
+
+The following environment variables must be set within your Heroku Server for the site to deploy and function correctly. Navigate to the **Settings** tab, and under the heading **Config Vars**, select **Reveal Config Vars,** and add the following variables:
+
+*  **IP** : 0.0.0.0
+* **PORT** : 5000
+* **MONGO_URI**
+  * This variable can be obtained from **MongoDB** through the following steps:
+  * Log in to [MongoDB](https://www.mongodb.com/).
+  * Under **Data Storage** click on **Clusters**.
+  * For the Cluster that you would like to connect to, click the **Connect** button.
+  *  Click on **Connect your Application.**
+  *  Select **Python**, and Version **3.6 or Later.**
+  * Copy the connection string, replacing `<password>` with your MongoDB password, and `myFirstDatabase` with the name of the **MongoDB Collection** (Database) you would like to connect to.
+* **MONGO_DBNAME**
+  * The name of the Database you are connecting to (in the above example, the default would be `myFirstDatabase`.
+* **SECRET_KEY**
+  * A random sequence of characters, required for maintaining session security in Flask. One method of obtaining a Secret Key is through [RandomKeygen](https://randomkeygen.com/).
+* Press Save
+
+## Running this project from your Browser/Locally
+
+ The `Master` branch is in production mode, which means debugging is disabled in the `app.py`.
+
+### Environment Variables
+
+* When running this project locally, the **Environment Variables** must be set in order for it to function as intended.
+*  Once you have completed any of the upcoming steps to run/deploy the project in your browser or locally, please create a new python file in your root directory called `envy.py`.
+*  Within this file, declare the environment variables described above, in the following format, replacing the `<variable>` with the required variables:
+
+```python
+import os
+
+os.environ.setdefault("IP", "<variable>")
+os.environ.setdefault("PORT", "<variable>")
+os.environ.setdefault("SECRET_KEY", "<variable>")
+os.environ.setdefault("MONGO_URI", "<variable>")
+os.environ.setdefault("MONGO_DBNAME", "<variable>")
+```
+
+The project will automatically locate this file, and read the required environment variables as and when necessary.
+
+### Running this project in your Browser
+
+1. Install [Google Chrome](https://www.google.co.uk/chrome/)
+2. Install [GitPod](https://www.gitpod.io/docs/browser-extension/) Browser Extensions for your chosen browser.
+3. Create a [GitHub](https://github.com/join) account.
+4. Log in to [Gitpod](https://gitpod.io/login/) using your GitHub account.
+5. Visit **Simply Films** [GitHub Repository](https://github.com/wilko90/Simply-Films).
+6. To run the `Master` branch, ensure the `Master` branch is selected next to the **branches** and **tags** subheadings.
+7. Open the repository in Gitpod:
+8. Click the green "Gitpod" icon at the top of the Repository
+9. A new workspace will open with the current state of the `master` branch. Any changes made to the requested branch after this point will not be automatically updated in your Gitpod Workspace.
+10. Create the env.py file in your root directory and declare the environment variables.
+11. Type `pip install requirements.txt` into the GitPod terminal to install all the required Python packages.
+12. To host the project from Gitpod, type `python app.py` in the terminal.
+
+### Running this project locally
+
+#### Cloning the Repository
+
+1. Visit **Simply Films** [GitHub Repository](https://github.com/wilko90/Simply-Films).
+2. Click the "Code" dropdown box above the repository’s file explorer.
+3. Under the "Clone" heading, click the "HTTPS" sub-heading.
+4. Click the clipboard icon, or manually copy the text presented: `https://github.com/wilko90/Simply-Films.git`
+5. Open your preferred IDE (VSCode, Atom, PyCharm, etc).
+6. Ensure your IDE has support for Git, or has the relevant Git extension.
+7. Open the terminal, and create a directory where you would like the Repository to be stored.
+8. Type git clone and paste the previously copied text (`https://github.com/wilko90/Simply-Films.git`) and press enter.
+9. The Repository will then be cloned to your selected directory.
+
+#### Manually Downloading the Repository
+
+1. Visit **Simply Films** [GitHub Repository](https://github.com/wilko90/Simply-Films).
+2. Click the "Code" dropdown box above the repository’s file explorer.
+3. Click the "Download ZIP" option; this will download a copy of the selected branch’s repository as a zip file.
+4. Locate the ZIP file downloaded to your computer, and extract the ZIP to a designated folder which you would like the repository to be stored.
+
+#### Opening the Repository
+
+1. Open your preferred IDE (VSCode, Atom, PyCharm, etc).
+2. Navigate to the chosen directory where the Repository was Cloned/Extracted.
+3. Type `pip install requirements.txt` to install all the required packages.
+4. Type `python app.py` in the terminal, whilst in the project’s root directory.
+5. You will now be hosting the repository from your IDE.
 
 
 # Credits <a name="credits"></a>
 
 ## Written Content
+* I started out by adding content my self under my username, all information on films are taken from [IMDB](https://www.imdb.com/)
+* All other content will be added by the users
+* All other content is written by me 
 
-All content is written by myself.
 
-## Modal Content 
-
-
+ 
 ## Images
-
+* Content images come from the users and can be sourced from mulitple places. For the boiler plate content I created a user and added content myself, Images for the film placholders came from [IMDB](https://www.imdb.com/)
+* Background images are sourced from [Adobe Stock](https://stock.adobe.com/uk/)
+* Image PlaceholderImage was sourced from [Adobe Stock](https://stock.adobe.com/uk/)
+* logo was made from a free editor called [Free Logo Design](https://editor.freelogodesign.org/)
+* Favicon was made from a free editor called [Icons8](https://icons8.com/icons/set/favicon)
+* Film images are added via a image hosting service and created by the users.
 
 ## Code
+
+1. The CRUD instructional videos from the code institute lessons were extremely helpful as I used a lot of refrenceing from there.
+2. Pagination Idea came from a project that I found on github and edited by my self [Link](https://github.com/ShaneMuir/Cookbook-Recipe-Manager/blob/master/main.py) 
+3. Confirming passwords on registration page [pallet projects](https://flask.palletsprojects.com/en/2.0.x/patterns/wtforms/)
+4. Error pages [pallet projects](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
 
 
 # Acknowledgements <a name="acknowledgements"></a>
 
-* The Inspiration for this project came from my love of food and drink. I aim to make functionality simple, eye catching design and consistent throughout.
+* The Inspiration for this project came from a movie database website called IMDB
 
 * Thank you to the slack community for guiding me in the right direction.
 
-* Thank you to my girlfriend for supporting me throughout this project. 
+* Thank you to my girlfriend for supporting me throughout my projects. 
 
 * Thank you to the tutors at Code Institute.
  
