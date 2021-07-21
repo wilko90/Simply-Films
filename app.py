@@ -133,6 +133,7 @@ def edit_film(film_id):
         }
         mongo.db.films.update({"_id": ObjectId(film_id)}, film_update)
         flash("Film Successfully Updated")
+        return redirect(url_for("films"))
     selected_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     selected_film_card = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("edit_film.html",
