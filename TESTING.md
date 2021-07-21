@@ -279,7 +279,13 @@ Features below are manual tetsing and described below
 
 ## Manage Films
 * Ensure only logged in users can view this page
-* Ensure 
+* Ensure when page selected, manage films renders 
+* Ensure if you have not yet created any films that an message states you have not and shows a C2A to add a film
+    * Ensure the C2A sends user to `Add Film` Page
+* Ensure if user has already created films, only films that he has created are showing
+* Ensure all films created are active and send user to correct film card
+* Ensure the user is present with a C2A that sends them to the `Add Film` page 
+
 
 # Further Testing <a name="further-testing"></a>
 ## Responsive Design
@@ -300,8 +306,6 @@ Devices used for testing:
 * Galaxy Fold
 
 All features are tested from viewports of 280px and above.
-
-
 
 
 # Browser Testing <a name="browser-testing"></a>
@@ -336,19 +340,51 @@ All features are tested from viewports of 280px and above.
 
 ## [Jigsaw Validator ](https://jigsaw.w3.org/css-validator/)
 * CSS successfully passes the W3 Jigsaw Validator
+<img src="https://i.ibb.co/cCw8VpC/Screenshot-2021-07-21-at-14-49-59.png">
 ## [JSHint](https://jshint.com/)
 
 * JS Hint was used to flag any errors or mistakes in the javascript code and was used consistently throughout the development process.
 * No errors are present 
-* Warnings present are due to template literals syntax that is only valid with ES6, however by adding `/*jshint esversion: 6 */` at the top of the script this removes the errors and takes into consideration of ES6 compatibility.
+* Two warnings present are due to "	'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)"
+## [Python](http://pep8online.com/)
+* The project's Python was validated for PEP8 compliance using Pep8,
+* These warnings have been considered, however they appear to be incorrectly reporting `env.py` as being unused, due to how `env.py` works. Once deployed, this will not be imported anyway, and therefore this has been added to the ignore file.
 
 ## [Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
+#### The project's Accessibility, Performance, and Best Practices audit was undertaken with Google Lighthouse. Webpages graded are below:
 
+## Home Page
+<img src="https://i.ibb.co/8NbzD72/Screenshot-2021-07-21-at-16-47-03.png">
+
+## Films
+<img src="https://i.ibb.co/G2LZC4D/Screenshot-2021-07-21-at-16-53-11.png">
+
+## Add Film
+<img src="https://i.ibb.co/FmtLhhv/Screenshot-2021-07-21-at-16-53-56.png">
+
+## Film Card
+<img src="https://i.ibb.co/nwRQzfN/Screenshot-2021-07-21-at-16-54-49.png">
+
+It Appears that I have been down scored due to the sheer size of the extrenal images been used. All Images come from users and maybe various sizes. Images can be reduced in size but this will effects visual quality. 
 
 # Bugs <a name="bugs"></a>
 
+### Input areas highlight whiter when predicted text is used
+* Unable to locate specific class to target background to remove the highlight.
 
+Solution: unresolved
+
+### Pagination on Manage Films page
+* After printing each section to the terminal of my manage film funciton, I cant get the pagination to show on the manage films page. Reaching out to the tutor support team they were also unable to help. due to submission time I could not follow up with them.  
+
+Solution unresolved
+
+### Targeting the object ID
+
+* I had an BSON error issue trying to target the ObjectId. I resolved this issue by removing the `insert_one` for the `find_one` method.
+
+Solution: resolved
 
 For full readme [click here](README.md)
 
