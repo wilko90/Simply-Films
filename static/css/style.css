@@ -88,6 +88,7 @@ body {
 
 .divider {
     background-color: var(--black);
+    margin-top: 40px;
 }
 
 /* Helpers */
@@ -784,10 +785,6 @@ textarea.materialize-textarea {
 
     .film-image {
         width: 100%;
-    }
-
-    .film-card-synopsis {
-        font-size: 70%px;
     }
 
     .film-card-info {
