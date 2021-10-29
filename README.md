@@ -5,7 +5,7 @@ Data-Centric Development Milestone Project - Simply Films </h1>
 
 
 
-Simply Films is a full-stack MongoDB-based Flask project which is to create a database of films that allows users to create, read, update and delete (CRUD) films. Simply Films allows non registered users to browse our database to search for their favourite films. Users are allowed to create an account and benefit from having access to all features of the website. Registered users can add new films, edit and delete their films.
+Simply Records is an online e-commerce store, offering a collection of Vinyls, Merchandise and Equipment for Music Lovers. User's can create their own account, saving their details for faster checkout for future purchases, but are not limited, and can make a purchase as a guest if wanted. The registered user can edit their personal details and access their shopping history. Users can add products to the website if logged in snd verified newsletter sign up is offered.
 
 The project was developed using HTML, CSS, JavaScript, and Python, and uses a NoSQL document-based database via MongoDB
 
@@ -49,7 +49,7 @@ IMDB, in full Internet Movie Database, is a Web site that provides information a
 [TMDB](https://www.themoviedb.org/?language=en-GB) <br>
 The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by the TMDB community dating back to 2008. The Movie Database Transforms uses the TMDB to search and pivot on movies, talent and directors names.
 
-[Letter Boxed](https://letterboxd.com/) <br>
+[Vinyl Tap](https://www.vinyltap.co.uk/) <br>
 Letterboxd is an online social networking service. Letterboxed was launched as a social app focused on sharing opinions about, and love of film. Members can use it as a diary to record their opinions about films, keep track of films they have seen in the past, write reviews or make lists of films and showcase their favourite films
 
 # Business Approach
@@ -166,7 +166,7 @@ Provide a platform on which users can add films to a database, allowing them to 
 
 
 ### Header
-The header of the page contains the NavBar and the Logo, It is a static element, and is fixed to the top of the page at all times.
+The header of the page contains the NavBar,Logo, search bar and cart It is a static element, and is fixed to the top of the page at all times.
 
 ### Navigation
 On larger viewports, the navigational elements are separated into separate links within the NavBar. On medium viewports and lower, the navigational elements are collapsed into a SideNav, which can be activated with a toggler in the upper-left corner.
@@ -174,13 +174,13 @@ On larger viewports, the navigational elements are separated into separate links
 ### logo
 A logo is placed within the Header element to the left, unless on medium viewports where it is centred.
 
-### Home/ Films/ Login / Register / Logout
+### Pre Orders/ New Releases/ Back in Stock / Merchandise / Logout / Login / Register/ Cart
 Users can access these pages regardless of where they are on the webpage.
 
 ### Footer
-The footer is positioned at the bottom of the page. this is not a sticky element, and when the content exceeds the viewport of the device, the footer is pushed out of the viewport. The footer contains the name of the web page and social links to Github, Facebook, Youtube, Instagram.
+The footer is positioned at the bottom of the page. this is not a sticky element, and when the content exceeds the viewport of the device, the footer is pushed out of the viewport. The footer contains the name of the web page and social links to, Facebook, Youtube, Instagram, Souncloud
 
-### Films
+### Products
 A stylistic design of 8 results per page showing the films available for the user to read.
 
 ### Film Cards
